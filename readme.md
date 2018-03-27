@@ -7,6 +7,7 @@ It is predefined to prerender the react app on the server.
 - Redux
 - React-Router
 - React-Router-Redux
+- Sass
 
 ## What you need
 - Node 8.10.0 LTS
@@ -32,6 +33,12 @@ With this command:
 npm run dev
 ```
 you can start a dev server which lets you develop react and is served at [localhost:8080](http://localhost:8080). It supports hot reloading, so you should see all your changes in the browser without reloading.
+
+Sass files and images can be imported as usual:
+```js
+import "./styles.scss";
+import logo from "./logo.png";
+```
 
 ### Beware:
 **./App.js**
