@@ -17,8 +17,20 @@ module.exports = {
             loaders: [
                 'babel-loader'
             ]
+        },{
+            test: /\.(png|jpg|gif)$/,
+            use: [{
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                    publicPath: '/public/images/',
+                    outputPath: 'public/images/',
+                    context: ''
+                }  
+            }]
         }]
     },
+    devtool: 'source-map',
     plugins: [
         new HardSourceWebpackPlugin()
     ]

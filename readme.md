@@ -46,6 +46,10 @@ This is the main html template. You can change it for your need. Keep the ```<di
 
 Here you will define all your components. From small widgets to complex pages and so on. Everything thats a react component goes into this folder.
 
+**./resources**
+
+This folder should contain all the resources like images.
+
 **./actions**
 
 Contains all your redux actions.

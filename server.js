@@ -15,6 +15,16 @@ const createHistory = require('history').createMemoryHistory;
 const StaticRouter = require('react-router').StaticRouter;
 const routerReducer = require('react-router-redux').routerReducer;
 
+// import config
+const {
+    port,
+    caching,
+    cachingHours
+} = require('./config');
+
+// initiate the cache
+let cache = {};
+
 // require your app
 const App = require('./dist/app.js');
 
@@ -31,6 +41,14 @@ server.use('/public', express.static(__dirname + '/dist/public'));
 
 // serve all other routes other than /public
 server.get('*', function (req, res) {
+
+    // check if we can get the response from cache
+    const today = new Date();
+    if(caching && cache[req.path] && (today.getTime() - cache[req.path].time) < (1000*60*60*cachingHours)){
+        res.send(cache[req.path].response);
+        return;
+    }
+
     // create redux store with router
     const store = createStore(
         combineReducers({
@@ -67,11 +85,20 @@ server.get('*', function (req, res) {
 
     // replace react app in index.html template
     let final = template.replace('<div id="root"></div>', reactContent);
+
+    // fill cache
+    if(caching){
+        cache[req.path] = {
+            time: today.getTime(),
+            response: final
+        };
+    }
+
     // send response html page with prerendered react
     res.send(final);
 });
 
 // run server on port 3000
-server.listen(3000, function () {
-    console.log('Example app listening on port 3000!');
+server.listen(port, function () {
+    console.log('Example app listening on port ' + port + '!');
 });

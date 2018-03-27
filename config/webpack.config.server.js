@@ -10,4 +10,16 @@ config.entry = {
     './reducers.js': './src/reducers/index.js'
 };
 
+config.module.rules = [
+    ...config.module.rules,
+    {
+        test: /\.(css|sass|scss)$/,
+        use: [{
+            loader: "css-loader"
+        }, {
+            loader: "sass-loader"
+        }]
+    }
+];
+
 module.exports = config;
