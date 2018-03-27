@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./dist/server.js",
-    "build": "webpack --mode development --config config/webpack.config.server.js && webpack --mode development --config config/webpack.config.browser.js",
+    "build": "webpack --mode production --config config/webpack.config.server.js && webpack --mode development --config config/webpack.config.browser.js",
     "dev": "webpack-dev-server --config config/webpack.config.dev.js --hot"
   },
   "author": "",
