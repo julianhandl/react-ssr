@@ -32,3 +32,28 @@ With this command:
 npm run dev
 ```
 you can start a dev server which lets you develop react and is served at [localhost:8080](http://localhost:8080). It supports hot reloading, so you should see all your changes in the browser without reloading.
+
+### Beware:
+**./App.js**
+
+This is your main entry point. Your app starts here. It contains the routes and includes your pages.
+
+**./index.html**
+
+This is the main html template. You can change it for your need. Keep the ```<div id="root"></div>``` because this is the place where the app will be rendered.
+
+**./components**
+
+Here you will define all your components. From small widgets to complex pages and so on. Everything thats a react component goes into this folder.
+
+**./actions**
+
+Contains all your redux actions.
+
+**./reducers**
+
+Contains all your redux reducers.
+
+**./entryPoint**
+
+Do not change anything in the entryPoint directory unless you know what you're doing. Here we have the entry points for the browser bundle and the dev bundle.
