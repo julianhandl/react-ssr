@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./dist/server.js",
-    "build": "webpack --mode development --config config/webpack.config.server.js && webpack --mode development --config config/webpack.config.browser.js"
+    "build": "webpack --mode development --config config/webpack.config.server.js && webpack --mode development --config config/webpack.config.browser.js",
+    "dev": "webpack-dev-server --config config/webpack.config.dev.js --hot"
   },
   "author": "",
   "license": "MIT",
@@ -18,18 +19,21 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "express": "^4.16.3",
+    "hard-source-webpack-plugin": "^0.6.4",
     "history": "^4.7.2",
     "html-webpack-plugin": "^3.1.0",
     "jest": "^22.4.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-dom-server": "0.0.5",
+    "react-hot-loader": "^4.0.0",
     "react-redux": "^5.0.7",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.9",
     "redux": "^3.7.2",
     "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.12"
+    "webpack-cli": "^2.0.12",
+    "webpack-dev-server": "^3.1.1"
   }
 }

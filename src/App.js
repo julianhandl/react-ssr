@@ -1,9 +1,7 @@
 // Import react
 import React from 'react';
+import { hot } from 'react-hot-loader';
 import {Route, Switch, Link} from 'react-router-dom';
-
-import {connect} from 'react-redux';
-import {setWebsiteDate} from './actions/website';
 
 // Import main pages
 import Home from './components/pages/Home';
@@ -11,14 +9,9 @@ import About from './components/pages/About';
 import NoMatch from './components/pages/404';
 
 // Defined root app
-// connect to redux
-@connect(() => ({}),{
-    setWebsiteDate
-})
-export default class App extends React.Component{
-    componentWillMount(){
-        this.props.setWebsiteDate(new Date());
-    }
+// WARNING: Do not connect this component to redux.
+// otherwise the router will not work
+class App extends React.Component{
     render(){
         // Render routes
         return <Switch>
@@ -28,5 +21,7 @@ export default class App extends React.Component{
         </Switch>;
     }
 }
+
+export default hot(module)(App);
 
 module.exports = App;
