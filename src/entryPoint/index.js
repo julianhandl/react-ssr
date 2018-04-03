@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import reducers from '../reducers';
+import thunk from 'redux-thunk';
 
 // Import Router and history
 import createHistory from 'history/createBrowserHistory';
@@ -32,6 +33,7 @@ export default function createEntry(App){
         composeEnhancers(
             applyMiddleware(
                 middleware,
+                thunk
             )
         ),
     )

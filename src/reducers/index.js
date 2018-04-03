@@ -1,5 +1,5 @@
-import website from './website';
+import home from './home';
 
 export default {
-    website
+    home
 };

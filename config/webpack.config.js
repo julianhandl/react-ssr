@@ -32,6 +32,6 @@ module.exports = {
     },
     devtool: 'source-map',
     plugins: [
-        new HardSourceWebpackPlugin()
+        //new HardSourceWebpackPlugin()
     ]
 }

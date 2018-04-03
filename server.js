@@ -7,17 +7,20 @@ const React = require('react');
 const ReactDOMServer = require('react-dom/server');
 
 // import redux
-const {createStore, combineReducers} = require('redux');
+const {createStore, combineReducers, applyMiddleware} = require('redux');
 const Provider = require('react-redux').Provider;
+const thunk = require('redux-thunk').default;
 
 // import react-router and history creator
 const createHistory = require('history').createMemoryHistory;
 const StaticRouter = require('react-router').StaticRouter;
-const routerReducer = require('react-router-redux').routerReducer;
+const matchPath = require('react-router-dom').matchPath;
+const { routerReducer, push } = require('react-router-redux');
 
 // import config
 const {
     port,
+    servePublic,
     caching,
     cachingHours
 } = require('./config');
@@ -26,7 +29,7 @@ const {
 let cache = {};
 
 // require your app
-const App = require('./dist/app.js');
+const { App, routes } = require('./dist/app.js');
 
 // require your reducers
 const reducers = require('./dist/reducers.js').default;
@@ -37,10 +40,13 @@ const server = express();
 const template = fs.readFileSync(__dirname + '/dist/index.html', 'utf-8');
 
 // defined public route for react bundle
-server.use('/public', express.static(__dirname + '/dist/public'));
+if(servePublic){
+    server.use('/public', express.static(__dirname + '/dist/public'));
+}
 
 // serve all other routes other than /public
 server.get('*', function (req, res) {
+    if(req.url === "/favicon.ico") return;
 
     // check if we can get the response from cache
     const today = new Date();
@@ -49,24 +55,55 @@ server.get('*', function (req, res) {
         return;
     }
 
-    // create redux store with router
+    // get action we need to prefetch data before rendering
+    let loadDataAction = undefined;
+    routes.some(route => {
+        const match = matchPath(req.url, route);
+        if(match && route.getLoadDataAction) loadDataAction = route.getLoadDataAction(match);
+        return match;
+    });
+    
+    // create redux store
     const store = createStore(
         combineReducers({
             ...reducers,
             router: routerReducer
-        })
-    );
+        }),
+        applyMiddleware(thunk)
+    ); 
 
-    // create history in memory and push requested path
-    const history = createHistory();
-    history.push(req.path, {});
+    // set correct router path in store
+    store.dispatch(push(req.url));
 
+    if(loadDataAction){
+        // dispatch the loadDataAction and render App with data
+        store.dispatch(loadDataAction)
+            .then(() => {
+                try{
+                    renderAndSend(req, res, store, today);
+                }
+                catch(err){
+                    console.error(err)
+                }
+            })
+            .catch((err) => {
+                res.sendStatus(500, err)
+            })
+    }
+    else{
+        // render app without data
+        renderAndSend(req, res, store, today);
+    }
+});
+
+// run server on port 3000
+server.listen(port, function () {
+    console.log('Example app listening on port ' + port + '!');
+});
+
+const renderAndSend = (req, res, store, today) => {
     // create predefined state object with router location prefilled
-    const preloadedState = {
-        router: {
-            location: history.location
-        }
-    };
+    const preloadedState = store.getState();
 
     // render the react app to string
     // Add redux Provider and Router
@@ -83,6 +120,7 @@ server.get('*', function (req, res) {
     // add predefined state to output
     reactContent += "<script>window.__PRELOADED_STATE__ = " + JSON.stringify(preloadedState).replace(/</g, '\\u003c') + "</script>";
 
+    console.log("render 3")
     // replace react app in index.html template
     let final = template.replace('<div id="root"></div>', reactContent);
 
@@ -96,9 +134,4 @@ server.get('*', function (req, res) {
 
     // send response html page with prerendered react
     res.send(final);
-});
-
-// run server on port 3000
-server.listen(port, function () {
-    console.log('Example app listening on port ' + port + '!');
-});
+};

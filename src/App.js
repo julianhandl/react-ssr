@@ -1,27 +1,23 @@
 // Import react
 import React from 'react';
 import { hot } from 'react-hot-loader';
-import {Route, Switch, Link} from 'react-router-dom';
+import {Switch, Link} from 'react-router-dom';
 
 import Header from './components/widgets/Header';
 
-// Import main pages
-import Home from './components/pages/Home';
-import About from './components/pages/About';
-import NoMatch from './components/pages/404';
+// Import routes
+import { routes, RouteWithSubRoutes } from './Routes';
 
 // Defined root app
 // WARNING: Do not connect this component to redux.
 // otherwise the router will not work
-class App extends React.Component{
+export class App extends React.Component{
     render(){
         // Render routes
         return <div>
             <Header />
             <Switch>
-                <Route exact path="/" component={Home} />
-                <Route path="/about" component={About} />
-                <Route component={NoMatch} />
+                {routes.map((route, i) => <RouteWithSubRoutes key={i} {...route} />)}
             </Switch>
         </div>;
     }
@@ -29,4 +25,7 @@ class App extends React.Component{
 
 export default hot(module)(App);
 
-module.exports = App;
+module.exports = {
+    App,
+    routes
+};

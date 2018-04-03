@@ -1,4 +1,5 @@
 let config = require('./webpack.config.js');
+const fetch = require('node-fetch');
 
 // set libraryTarget to umd, so we can require it in server.js
 config.output.libraryTarget = 'umd';

@@ -1,17 +1,17 @@
 import {
-    SET_WEBSITE_DATE
-} from '../actions/website';
+    HOME_SET_INITIAL_DATA
+} from '../actions/home';
 
 const initalState = {
-    date: null
+    data: null
 };
 
 export default (state = initalState, action) => {
     switch(action.type){
-        case SET_WEBSITE_DATE:
+        case HOME_SET_INITIAL_DATA:
             return {
                 ...state,
-                date: action.value
+                data: action.payload.results
             }
         default:
             return state;
