@@ -120,7 +120,6 @@ const renderAndSend = (req, res, store, today) => {
     // add predefined state to output
     reactContent += "<script>window.__PRELOADED_STATE__ = " + JSON.stringify(preloadedState).replace(/</g, '\\u003c') + "</script>";
 
-    console.log("render 3")
     // replace react app in index.html template
     let final = template.replace('<div id="root"></div>', reactContent);
 

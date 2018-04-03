@@ -28,7 +28,7 @@ export default class Home extends React.Component{
                         <li key={p.name}>{p.name}</li>
                     ))}
                 </ul>
-                : null}
+                : <span>Loading</span>}
             </div>
         );
     }
