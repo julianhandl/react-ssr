@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {homeSetInitialData} from '../../../actions/home';
 
+import './Home.scss';
+
 @connect(({home:{data}})=>({
     data: data
 }),{
@@ -16,11 +18,13 @@ export default class Home extends React.Component{
     }
     render(){
         return(
-            <div>
+            <div className="page">
                 <h1>Home</h1>
-                <ul>
-                    <li><Link to="/about">About</Link></li>
-                </ul>
+                <p>
+                    This is the bestit boilerplate for react serverside rendering.<br />
+                    Feel free to extend and change this project to create your own app.<br />
+                    Here's a list of Star Wars characters to show how async data loading is done:
+                </p>
                 <h2>People</h2>
                 {this.props.data ?
                 <ul>

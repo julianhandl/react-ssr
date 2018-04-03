@@ -30,6 +30,10 @@ config.module.rules = [
     }
 ];
 
+config.devServer = {
+    historyApiFallback: true
+};
+
 // include browser bundle in the index.html template
 config.plugins =  [
     ...config.plugins,

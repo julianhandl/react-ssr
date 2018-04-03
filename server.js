@@ -15,7 +15,7 @@ const thunk = require('redux-thunk').default;
 const createHistory = require('history').createMemoryHistory;
 const StaticRouter = require('react-router').StaticRouter;
 const matchPath = require('react-router-dom').matchPath;
-const { routerReducer, push } = require('react-router-redux');
+const { routerReducer, routerActions } = require('react-router-redux');
 
 // import config
 const {
@@ -73,7 +73,10 @@ server.get('*', function (req, res) {
     ); 
 
     // set correct router path in store
-    store.dispatch(push(req.url));
+    store.dispatch({
+        type: "@@router/LOCATION_CHANGE",
+        payload: { pathname: req.path }
+    });
 
     if(loadDataAction){
         // dispatch the loadDataAction and render App with data
