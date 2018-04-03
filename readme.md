@@ -76,7 +76,7 @@ Prefetching this data is a very complex topic when it comes to server side rende
 
 In ```./Routes.js``` we have defined our Routes that our App will use. Every route object can receive the property ```getLoadDataAction``` which must contain a function. This function must call an action creator that is defined somewhere in our ```./actions``` directory. The calles action should load all the data we need to display the current route and store it in the redux store. With this we can render our App with a prefilled store.
 
-The action will most likely be an async action because we will performa an api call which is async. Check out (redux-thunk)[https://github.com/gaearon/redux-thunk#why-do-i-need-this] on how to write an async redux action. **The action must return a promise to work with the server side rendering**.
+The action will most likely be an async action because we will performa an api call which is async. Check out [redux-thunk](https://github.com/gaearon/redux-thunk#why-do-i-need-this) on how to write an async redux action. **The action must return a promise to work with the server side rendering**.
 
 It should look like this example in the end:
 
