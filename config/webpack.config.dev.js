@@ -1,8 +1,13 @@
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 let config = require('./webpack.config.js');
 
-// set entry for browser. Bundle whole React app into browser.js
-config.entry = './src/entryPoint/dev.js';
+// set entry for browser. Bundle whole React app into bundle.js
+config.entry = [
+    require.resolve('react-dev-utils/webpackHotDevClient'),
+    'react-hot-loader/patch',
+    './src/entryPoint/dev.js'
+];
 config.output.filename = 'bundle.js';
 
 config.module.rules = [
@@ -20,26 +25,27 @@ config.module.rules = [
                 url: false,
                 minimize: true,
                 sourceMap: true
-            } // translates CSS into CommonJS
+            }
         }, {
             loader: "sass-loader",
             options: {
                 sourceMap: true
-            } // compiles Sass to CSS
+            }
         }]
     }
 ];
 
 config.devServer = {
-    historyApiFallback: true
+    historyApiFallback: true,
+    hot: true
 };
 
-// include browser bundle in the index.html template
 config.plugins =  [
     ...config.plugins,
     new HtmlWebpackPlugin({
         template: 'src/index.html'
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
 ];
 
 module.exports = config;

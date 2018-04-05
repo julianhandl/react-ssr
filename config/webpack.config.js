@@ -14,9 +14,12 @@ module.exports = {
         rules: [{
             test: /\.js$/,
             exclude: /node_modules/,
-            loaders: [
-                'babel-loader'
-            ]
+            use: [{
+                loader: 'babel-loader',
+                options: {
+                    cacheDirectory: true
+                }
+            }]
         },{
             test: /\.(png|jpg|gif)$/,
             use: [{
@@ -31,7 +34,5 @@ module.exports = {
         }]
     },
     devtool: 'source-map',
-    plugins: [
-        //new HardSourceWebpackPlugin()
-    ]
+    plugins: []
 }

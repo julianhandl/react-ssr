@@ -26,7 +26,7 @@ node server.js
 This starts the server which is defined in the ```server.js``` file. It will prerender your app and respond to the client with a prefilled html site which already contains the initial state of your app. This is great for search engined and stuff like that.
 
 ## Developing your app
-This setup can be used to develop your React app. If you want really quick development or just prototyping, use *Create React App*.
+This setup can be used to develop your React app.
 
 With this command:
 ```js

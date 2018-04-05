@@ -12,7 +12,7 @@ import thunk from 'redux-thunk';
 import createHistory from 'history/createBrowserHistory';
 import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux';
 
-export default function createEntry(App){
+export default function createEntry(App, dev = false){
     // create a browser history
     const history = createHistory();
     const middleware = routerMiddleware(history);
@@ -39,7 +39,9 @@ export default function createEntry(App){
     )
 
     // hydrate (render) the already rendered app from the server
-    ReactDOM.hydrate(
+    let render = ReactDOM.hydrate;
+    if(dev) render = ReactDOM.render;
+    render(
         <Provider store={store}>
             <ConnectedRouter history={history}>
                 <App />
