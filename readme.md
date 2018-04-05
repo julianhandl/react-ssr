@@ -4,10 +4,19 @@ This is a basic boilerplate to create react apps.
 It is predefined to prerender the react app on the server.
 
 ## Included:
-- Redux
-- React-Router
-- React-Router-Redux
+- Webpack v4.1.1
+- Babel v6.26
+- Redux v16.2
+- React-Router v4.2.0
+- React-Router-Redux v5.0
 - Sass
+
+## Supported in Babel
+- ES2015
+- Babel Stage 2 Preset
+- Babel React Preset
+- Decorators
+- Class Properties
 
 ## What you need
 - Node 8.10.0 LTS
