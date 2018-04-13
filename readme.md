@@ -7,6 +7,7 @@ It is predefined to prerender the react app on the server.
 - Webpack v4.1.1
 - Babel v6.26
 - Redux v16.2
+- React-Helmet v5.2.0
 - React-Router v4.2.0
 - React-Router-Redux v5.0
 - Sass
