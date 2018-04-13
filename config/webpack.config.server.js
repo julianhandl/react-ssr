@@ -23,4 +23,6 @@ config.module.rules = [
     }
 ];
 
+config.externals = ['react-helmet'];
+
 module.exports = config;

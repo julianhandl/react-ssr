@@ -17,6 +17,10 @@ const StaticRouter = require('react-router').StaticRouter;
 const matchPath = require('react-router-dom').matchPath;
 const { routerReducer, routerActions } = require('react-router-redux');
 
+// import other utils
+const Helmet = require('react-helmet').Helmet;
+const minify = require('html-minifier').minify;
+
 // import config
 const {
     port,
@@ -125,6 +129,23 @@ const renderAndSend = (req, res, store, today) => {
 
     // replace react app in index.html template
     let final = template.replace('<div id="root"></div>', reactContent);
+
+    // include react helmet
+    const helmet = Helmet.rewind();
+    let head = `
+        ${helmet.title.toString()}
+        ${helmet.meta.toString()}
+        ${helmet.link.toString()}
+        ${helmet.style.toString()}
+        ${helmet.script.toString()}
+        ${helmet.noscript.toString()}
+    `;
+    final = final.replace('<title>react-helmet-placeholder</title>', head);
+
+    // minify output
+    final = minify(final, {
+        collapseWhitespace: true
+    });
 
     // fill cache
     if(caching){

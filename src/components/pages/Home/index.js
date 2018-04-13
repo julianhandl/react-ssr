@@ -1,4 +1,5 @@
 import React from 'react';
+import {Helmet} from "react-helmet";
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {homeSetInitialData} from '../../../actions/home';
@@ -19,6 +20,9 @@ export default class Home extends React.Component{
     render(){
         return(
             <div className="page">
+                <Helmet>
+                    <title>Home</title>
+                </Helmet>
                 <h1>Home</h1>
                 <p>
                     This is the bestit boilerplate for react serverside rendering.<br />
