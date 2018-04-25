@@ -5,10 +5,7 @@ import logo from '../../../resources/images/best_it_logo_default.png';
 
 import './Header.scss';
 
-@connect(({router:{location}})=>({
-    path: location && location.pathname || "/"
-}),{})
-export default class Header extends React.Component {
+export class Header extends React.Component {
     render(){
         return (
             <header className="header">
@@ -25,3 +22,7 @@ export default class Header extends React.Component {
         );
     }
 }
+
+export default connect(({router:{location}})=>({
+    path: location && location.pathname || "/"
+}),{})(Header);

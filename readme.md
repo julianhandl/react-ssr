@@ -4,13 +4,16 @@ This is a basic boilerplate to create react apps.
 It is predefined to prerender the react app on the server.
 
 ## Included:
-- Webpack v4.1.1
-- Babel v6.26
-- Redux v16.2
-- React-Helmet v5.2.0
-- React-Router v4.2.0
-- React-Router-Redux v5.0
-- Sass
+- React v16.2
+- Webpack v4.1.1 (Bundling)
+- Babel v6.26 (Transpiler)
+- Redux v16.2 (State Management)
+- React-Helmet v5.2.0 (Html Head Management)
+- React-Router v4.2.0 (Routing)
+- React-Router-Redux v5.0 (Routing)
+- Sass (Styles)
+- Jest (Unit Tests)
+- Enzyme (Unit Tests)
 
 ## Supported in Babel
 - ES2015
@@ -78,6 +81,16 @@ Contains all your redux reducers.
 **./entryPoint**
 
 Do not change anything in the entryPoint directory unless you know what you're doing. Here we have the entry points for the browser bundle and the dev bundle.
+
+## Testing
+This repo is already set up with unittests for it's components. We are testing this with facebooks "Jest" and Airbnb's "Enzyme". This gives us a really good foundation for unit testing react apps.
+
+Just extends or change the tests to fit your needs. If you don't feel like testing you can just ignore or delete the ```*.test.js``` files.
+
+Run the tests by executing:
+```js
+npm run test
+```
 
 ## Server rendering with prefilled data
 Usually we fetch data from an api to fill our react app with data. Every route we defined, must fetch it's data at one point to render the page the current route has assigned.

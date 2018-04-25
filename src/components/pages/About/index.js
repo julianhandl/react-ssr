@@ -1,13 +1,12 @@
 import React from 'react';
 import {Helmet} from "react-helmet";
-import {Link} from 'react-router-dom';
 
 import './About.scss';
 
-export default class Home extends React.Component{
+export class About extends React.Component{
     render(){
         return(
-            <div className="page">
+            <div className="page page--about">
                 <Helmet>
                     <title>About</title>
                 </Helmet>
@@ -16,3 +15,5 @@ export default class Home extends React.Component{
         );
     }
 }
+
+export default About;

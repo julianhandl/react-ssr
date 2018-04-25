@@ -6,20 +6,15 @@ import {homeSetInitialData} from '../../../actions/home';
 
 import './Home.scss';
 
-@connect(({home:{data}})=>({
-    data: data
-}),{
-    homeSetInitialData
-})
-export default class Home extends React.Component{
+export class Home extends React.Component{
     componentDidMount(){
-        if(!this.props.data){
+        if(!this.props.data && this.props.homeSetInitialData){
             this.props.homeSetInitialData();
         }
     }
     render(){
         return(
-            <div className="page">
+            <div className="page page--home">
                 <Helmet>
                     <title>Home</title>
                 </Helmet>
@@ -31,13 +26,19 @@ export default class Home extends React.Component{
                 </p>
                 <h2>People</h2>
                 {this.props.data ?
-                <ul>
+                <ul className="list">
                     {this.props.data.map(p => (
                         <li key={p.name}>{p.name}</li>
                     ))}
                 </ul>
-                : <span>Loading</span>}
+                : <span className="loading">Loading</span>}
             </div>
         );
     }
 }
+
+export default connect(({home:{data}})=>({
+    data: data
+}),{
+    homeSetInitialData
+})(Home);

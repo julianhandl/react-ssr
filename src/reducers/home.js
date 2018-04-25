@@ -2,11 +2,11 @@ import {
     HOME_SET_INITIAL_DATA
 } from '../actions/home';
 
-const initalState = {
+export const initalState = {
     data: null
 };
 
-export default (state = initalState, action) => {
+export default (state = initalState, action = {}) => {
     switch(action.type){
         case HOME_SET_INITIAL_DATA:
             return {
