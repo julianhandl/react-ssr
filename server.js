@@ -105,7 +105,7 @@ server.get('*', function (req, res) {
 
 // run server on port 3000
 server.listen(port, function () {
-    console.log('Example app listening on port ' + port + '!');
+    console.log('App listening on port ' + port + '!');
 });
 
 const renderAndSend = (req, res, store, today) => {
