@@ -18,7 +18,6 @@ config.module.rules = [
         , {
             loader: "css-loader",
             options: {
-                url: false,
                 minimize: true,
                 sourceMap: true
             } // translates CSS into CommonJS
