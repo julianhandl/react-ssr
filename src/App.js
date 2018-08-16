@@ -2,10 +2,14 @@
 import React from 'react';
 import {Switch, Link} from 'react-router-dom';
 import Header from './components/widgets/Header';
+import CookiePolicy from './components/widgets/CookiePolicy';
 import {Helmet} from "react-helmet";
 
 // Import routes
 import { routes, RouteWithSubRoutes } from './Routes';
+
+// Styles
+import './global.scss';
 
 // Defined root app
 // WARNING: Do not connect this component to redux.
@@ -23,6 +27,7 @@ class App extends React.Component{
             <Switch>
                 {routes.map((route, i) => <RouteWithSubRoutes key={i} {...route} />)}
             </Switch>
+            <CookiePolicy />
         </div>;
     }
 }

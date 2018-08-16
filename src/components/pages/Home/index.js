@@ -1,26 +1,22 @@
 import React from 'react';
 import {Helmet} from "react-helmet";
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
-import {homeSetInitialData} from '../../../actions/home';
+import {fetchInit} from '../../../actions/home';
 
 import './Home.scss';
 
 export class Home extends React.Component{
     componentDidMount(){
-        if(!this.props.data && this.props.homeSetInitialData){
-            this.props.homeSetInitialData();
+        if(!this.props.data && this.props.fetchInit){
+            this.props.fetchInit();
         }
     }
-    render(){
-        return(
-            <div className="page page--home">
-                <Helmet>
-                    <title>Home</title>
-                </Helmet>
+    renderContent = () => {
+        return (
+            <div className="home-content" key="home-content-key">
                 <h1>Home</h1>
                 <p>
-                    This is the bestit boilerplate for react serverside rendering.<br />
+                    This is a boilerplate for react serverside rendering.<br />
                     Feel free to extend and change this project to create your own app.<br />
                     Here's a list of Star Wars characters to show how async data loading is done:
                 </p>
@@ -30,15 +26,23 @@ export class Home extends React.Component{
                     {this.props.data.map(p => (
                         <li key={p.name}>{p.name}</li>
                     ))}
-                </ul>
-                : <span className="loading">Loading</span>}
+                </ul> : null}
             </div>
         );
+    }
+    render(){
+        return[
+            <Helmet key='helmet-key-home'>
+                <title>Home</title>
+                <meta name="description" content="Das ist die Home Seite" />
+            </Helmet>,
+            this.renderContent()
+        ];
     }
 }
 
 export default connect(({home:{data}})=>({
     data: data
 }),{
-    homeSetInitialData
+    fetchInit
 })(Home);

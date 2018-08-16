@@ -1,6 +1,7 @@
 // import filesystem and express server
 const fs = require('fs');
 const express = require('express');
+const sm = require('sitemap');
 
 // import react and react-dom for server
 const React = require('react');
@@ -26,7 +27,8 @@ const {
     port,
     servePublic,
     caching,
-    cachingHours
+    cachingHours,
+    domain
 } = require('./config');
 
 // initiate the cache
@@ -43,10 +45,42 @@ const server = express();
 // include generated index.html file to serve
 const template = fs.readFileSync(__dirname + '/dist/index.html', 'utf-8');
 
+// create sitemap.xml
+var sitemap = sm.createSitemap ({
+    hostname: domain,
+    cacheTime: 600000,        // 600 sec - cache purge period
+    urls: routes
+            .filter(function(route){ return route.path !== '*' && route.path !== "/"})
+            .map(function(route){
+                return {
+                    url: route.path + '/',
+                    changefreq: 'monthly'
+                };
+            })
+});
+
+// serve sitemap
+server.get('/sitemap.xml', function(req, res) {
+    sitemap.toXML( function (err, xml) {
+        if (err) {
+          return res.status(500).end();
+        }
+        res.header('Content-Type', 'application/xml');
+        res.send( xml );
+    });
+});
+
 // defined public route for react bundle
 if(servePublic){
     server.use('/public', express.static(__dirname + '/dist/public'));
 }
+
+/*
+server.get('/robots.txt', function (req, res) {
+    res.type('text/plain');
+    res.send("User-agent: *\nDisallow: /");
+});
+*/
 
 // serve all other routes other than /public
 server.get('*', function (req, res) {

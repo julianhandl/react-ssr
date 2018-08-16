@@ -2,24 +2,28 @@ import React from 'react';
 import {Route} from 'react-router-dom';
 import fetch from 'node-fetch';
 
-import Home from './components/pages/Home';
+import HomeContainer from './components/containers/homeContainer';
 import About from './components/pages/About';
 import NoMatch from './components/pages/404';
 
-import {homeSetInitialData} from './actions/home';
+import {fetchInit as homeFetchInit} from './actions/home';
 
 export const routes = [{
     path: '/',
     exact: true,
-    component: Home,
+    component: HomeContainer,
+    title: 'Home',
+    navigation: true,
     routes: undefined,
     getLoadDataAction: (match) => {
-        return homeSetInitialData();
+        return homeFetchInit();
     }
 },{
     path: '/about',
     exact: true,
     component: About,
+    title: 'About',
+    navigation: true,
     routes: undefined
 },{
     path: '*',
