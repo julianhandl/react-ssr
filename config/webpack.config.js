@@ -1,5 +1,4 @@
 const path = require('path');
-const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
 /*
     Basic webpack config to compile a react app.
@@ -34,5 +33,6 @@ module.exports = {
         }]
     },
     devtool: 'source-map',
-    plugins: []
+    plugins: [
+    ]
 }

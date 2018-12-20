@@ -32,7 +32,7 @@ class App extends React.Component{
     }
 }
 
-module.exports = {
+export {
     App,
     routes
 };

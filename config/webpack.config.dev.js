@@ -22,7 +22,6 @@ config.module.rules = [
         }, {
             loader: "css-loader",
             options: {
-                minimize: true,
                 sourceMap: true
             }
         }, {

@@ -1,5 +1,5 @@
 module.exports = {
-    port: 80,
+    port: 9000,
     servePublic: true,
     caching: true,
     cachingHours: 8,
