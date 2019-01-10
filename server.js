@@ -2,6 +2,7 @@
 const fs = require('fs');
 const express = require('express');
 const sm = require('sitemap');
+const cors = require('cors');
 
 // import react and react-dom for server
 const React = require('react');
@@ -69,6 +70,17 @@ server.get('/sitemap.xml', function(req, res) {
         res.send( xml );
     });
 });
+
+// cors settings
+server.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+server.use(cors());
+server.use(express.json());
+server.use(express.urlencoded());
 
 // defined public route for react bundle
 if(servePublic){
