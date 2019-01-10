@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+const axios = require('axios');
 
 export const HOME_FETCH_INIT_START = 'HOME_FETCH_INIT_START';
 export const HOME_FETCH_INIT_ERROR = 'HOME_FETCH_INIT_ERROR';
@@ -11,9 +11,8 @@ export function fetchInit(){
         });
         return new Promise((resolve, reject) => {
             // has to return an action that returns a primise
-            fetch("https://swapi.co/api/people")
-                .then(res => res.json())
-                .then(data => {
+            axios.get("https://swapi.co/api/people")
+                .then(res => {
                     dispatch({
                         type: HOME_FETCH_INIT,
                         payload: data
