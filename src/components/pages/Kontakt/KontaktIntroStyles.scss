@@ -1,0 +1,128 @@
+@import "../../../variables.scss";
+
+.kontakt-intro {
+    @media screen and (min-width: $screen-m) {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    @media screen and (min-width: $screen-l) {
+        padding: 4rem 0 1rem 0;
+    }
+
+    &__slogan {
+        margin: 0 auto;
+
+        @media screen and (min-width: $screen-m) {
+            margin: 0;
+        }
+        @media screen and (min-width: $screen-l) {
+            span {
+                display: block;
+            }
+        }
+
+        h1 {
+            margin: 1rem 0;
+
+            small {
+                display: block;
+                color: $color-text;
+                font-size: 1.3rem;
+                font-family: $font-text;
+            }
+        }
+        p {
+            color: $color-text-light;
+            font-size: 1.3rem;
+            line-height: 1.5;
+        }
+    }
+
+    &__action {
+        display: flex;
+        margin: 1.5rem 0 0 0;
+
+        &-button {
+            display: block;
+            padding: $padding-vertical $padding-horizontal;
+            border: 0.13rem solid transparent;
+            text-decoration: none;
+            margin: 0 1.5rem 0 0;
+            border-radius: $border-radius;
+            font-weight: 700;
+
+            &--musik {
+                color: $color-brand;
+                border-color: $color-brand;
+            }
+            &--zelt {
+                color: $color-brand2;
+                border-color: $color-brand2;
+            }
+        }
+    }
+
+    &__boxes {
+        margin-top: 4rem;
+
+        @media screen and (min-width: $screen-m) {
+            display: flex;
+            flex: 1;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 0rem;
+        }
+        @media screen and (min-width: $screen-l) {
+            flex: none;
+            align-items: flex-start;
+            flex-direction: row;
+            margin-top: 1.5rem;
+        }
+    }
+
+    &__box {
+        background: #fff;
+        margin: 2rem auto 0 auto;
+        padding: 1.8rem 2rem;
+        width: 23rem;
+        max-width: 100%;
+        border-radius: $border-radius;
+
+        @media screen and (min-width: $screen-m) {
+            margin: 1rem 0;
+            padding: 1.2rem 1.5rem;
+            width: 20rem;
+        }
+
+        @media screen and (min-width: $screen-l) {
+            margin: 0 1rem;
+        }
+
+        h1 {
+            margin: 0;
+            color: $color-text;
+            font-size: 1.85rem;
+        }
+        p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 0.7rem;
+        }
+        &-price {
+            margin: 0 0 0 0.3rem;
+            font-size: 1.5rem;
+
+            span {
+                margin: 0 0 0 1rem;
+                font-size: 3.75rem;
+                font-weight: bold;
+                color: $color-brand;
+            }
+            &-day {
+                margin: 0 0 0 1rem;
+                color: $color-text-light;
+            }
+        }
+    }
+}

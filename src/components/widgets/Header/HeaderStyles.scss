@@ -1,0 +1,109 @@
+@import "../../../variables.scss";
+
+.header{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    z-index: 1;
+
+    &__logo {
+        width: 2rem;
+
+        img {
+            width: 11rem;
+            height: auto;
+            transform: translateX(-0.2rem);
+        }
+    }
+
+    &__menu {
+        margin: 0 2rem 0 0;
+
+        &-list {
+            display: none;
+
+            @media screen and (max-width: $screen-l) {
+                &--open {
+                    display: flex;
+                    align-items: center;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    z-index: 2;
+                    background: #fff;
+                }
+            }
+
+            @media screen and (min-width: $screen-l) {
+                display: block;
+                margin: 0 1rem 0 0;
+            }
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            display: block;
+            width: 100%;
+
+            @media screen and (min-width: $screen-l) {
+                display: inline-block;
+                margin: 0 0 0 1rem;
+                width: initial;
+            }
+        }
+
+        a {
+            display: block;
+            color: $color-brand;
+            text-decoration: none;
+            font-size: 2rem;
+            text-align: center;
+
+            @media screen and (min-width: $screen-l) {
+                text-align: left;
+                font-size: 1rem;
+                padding: 0.3rem 0.8rem;
+                background: #fff;
+                border-radius: $border-radius;
+                box-shadow: 0rem 0rem 0rem rgba(0, 0, 0, 0);
+                transform: scale(1);
+                transition: box-shadow 400ms ease 100ms, transform 500ms ease;
+
+                &:hover {
+                    box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.3);
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+    
+    &__menu-trigger {
+        position: relative;
+
+        &--open {
+            z-index: 3;
+
+            .menu-icon__bar {
+                background: #000 !important;
+            }
+        }
+
+        .menu-icon__bar {
+            background: #fff;
+            height: 0.2rem;
+        }
+
+        @media screen and (min-width: $screen-l) {
+            display: none;
+        } 
+    }
+}

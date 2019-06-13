@@ -1,0 +1,40 @@
+@import "../../../variables.scss";
+
+.home-delivery {
+    padding: 3rem 0;
+    text-align: center;
+    margin: 0 auto;
+
+    @media screen and (min-width: $screen-m) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 6rem 0;
+    }
+
+    .map {
+        max-width: 100%;
+    }
+    &__text {
+        @media screen and (min-width: $screen-m) {
+            margin: 0 0 0 4rem;
+        }
+    }
+
+    h1 {
+        margin: 3rem 0 1rem 0;
+
+        @media screen and (min-width: $screen-m) {
+            margin: 0 0 1rem 0;
+            font-size: 2.5rem;
+        }
+    }
+    p {
+        width: 20rem;
+        margin: 0 auto;
+
+        @media screen and (min-width: 25.5rem) {
+            width: 22rem;
+        }
+    }
+}

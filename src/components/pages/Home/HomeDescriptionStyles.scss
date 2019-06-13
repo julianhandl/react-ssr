@@ -1,0 +1,50 @@
+@import "../../../variables.scss";
+
+.home-description {
+    padding: 3rem 0;
+    text-align: center;
+    max-width: 31.5rem;
+    margin: 0 auto;
+
+    @media screen and (min-width: $screen-m) {
+        max-width: 64rem;
+    }
+
+    &__wrapper {
+        margin-top: 4rem;
+        background: #fff;
+    }
+
+    h1 {
+        width: 20rem;
+        margin: 0 auto 2rem auto;
+
+        @media screen and (min-width: 34rem) {
+            width: 100%;
+        }
+    }
+    p {
+        line-height: 1.5;
+        width: 17rem;
+        margin: 0 auto;
+
+        @media screen and (min-width: 34rem) {
+            width: 23rem;
+        }
+        @media screen and (min-width: $screen-m) {
+            width: 38rem;
+        }
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        color: $color-brand;
+        font-size: 1.8rem;
+        font-weight: bold;
+
+        li {
+            margin: 2rem 0;
+        }
+    }
+}

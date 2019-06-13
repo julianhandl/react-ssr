@@ -1,6 +1,17 @@
-$screen-s: 480px;
-$screen-m: 768px;
-$screen-l: 1024px;
+$screen-s: 30rem; //480
+$screen-m: 48rem; //768
+$screen-l: 64rem; //1024
+$screen-xl: 80rem; //1440
 
-$color-brand: #DDDE45;
-$color-brand-dark: #C1D11D;
+$color-brand: #E71665;
+$color-brand2: #FBBB30;
+$color-text: #333;
+$color-text-light: #aaa;
+
+$font-brand: "font";
+$font-text: "Open Sans", Arial;
+
+$border-radius: 0.1875rem;
+
+$padding-horizontal: 1rem;
+$padding-vertical: 1rem;

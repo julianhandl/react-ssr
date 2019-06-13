@@ -1,7 +1,7 @@
 module.exports = {
-    port: 9000,
+    port: 80,
     servePublic: true,
     caching: true,
-    cachingHours: 8,
+    cachingHours: 24,
     domain: 'https://julianhandl.at'
 }

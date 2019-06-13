@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`KontaktIntro should render normal 1`] = `
+<KontaktIntro>
+  <div
+    className="container"
+  >
+    <div
+      className="kontakt-intro"
+    >
+      <div
+        className="kontakt-intro__slogan"
+      >
+        <h1>
+          <span>
+            Kontakt
+          </span>
+        </h1>
+        <p>
+          <span>
+            User Shopsystem ist noch in den Kinderschuhen. 
+          </span>
+          <span>
+            Wir beraten Sie und schreiben Ihnen gerne ein Angebot 
+          </span>
+          <span>
+            solange unsere Webseite noch Laufen lernt.
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</KontaktIntro>
+`;

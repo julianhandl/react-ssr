@@ -36,7 +36,7 @@ const {
 let cache = {};
 
 // require your app
-const { App, routes } = require('./dist/app.js');
+const { App, websiteRoutes } = require('./dist/app.js');
 
 // require your reducers
 const reducers = require('./dist/reducers.js').default;
@@ -50,14 +50,14 @@ const template = fs.readFileSync(__dirname + '/dist/index.html', 'utf-8');
 var sitemap = sm.createSitemap ({
     hostname: domain,
     cacheTime: 600000,        // 600 sec - cache purge period
-    urls: routes
-            .filter(function(route){ return route.path !== '*' && route.path !== "/"})
-            .map(function(route){
-                return {
-                    url: route.path + '/',
-                    changefreq: 'monthly'
-                };
-            })
+    urls: websiteRoutes
+        .filter(function(route){ return route.path !== '*' && route.path !== "/"})
+        .map(function(route){
+            return {
+                url: route.path + '/',
+                changefreq: 'monthly'
+            };
+        })
 });
 
 // serve sitemap
@@ -107,7 +107,7 @@ server.get('*', function (req, res) {
 
     // get action we need to prefetch data before rendering
     let loadDataAction = undefined;
-    routes.some(route => {
+    websiteRoutes.some(route => {
         const match = matchPath(req.url, route);
         if(match && route.getLoadDataAction) loadDataAction = route.getLoadDataAction(match);
         return match;

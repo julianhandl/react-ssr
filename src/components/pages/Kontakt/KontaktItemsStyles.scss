@@ -1,0 +1,50 @@
+@import "../../../variables.scss";
+
+.kontakt-items {
+    margin: 3rem 0 4rem 0;
+
+    @media screen and (min-width: $screen-m) {
+        margin: 0 0 4rem 0;
+    }
+    @media screen and (min-width: $screen-l) {
+        margin: 0 0 8rem 0;
+    }
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+.kontakt-item {
+    display: block;
+    width: 100%;
+    margin: 1rem 0 0 0;
+    padding: $padding-vertical $padding-horizontal;
+    border-radius: $border-radius;
+    background: #fff;
+
+    @media screen and (min-width: $screen-m) {
+        width: calc(50% - 1rem);
+        margin: 1.5rem 0 0 0;
+    }
+
+    @media screen and (min-width: $screen-l) {
+        width: calc(33% - 1rem);
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 1.875rem;
+    }
+
+    a {
+        display: block;
+    }
+    p {
+        display: block;
+        margin: 0;
+        color: $color-brand;
+    }
+}

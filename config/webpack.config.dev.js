@@ -1,12 +1,13 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-let config = require('./webpack.config.js');
+const base = require('./webpack.config.js');
+let config = base();
 
 // set entry for browser. Bundle whole React app into bundle.js
 config.entry = [
     require.resolve('react-dev-utils/webpackHotDevClient'),
     'react-hot-loader/patch',
-    './src/entryPoint/dev.js'
+    './src/entryPoint/dev.tsx'
 ];
 config.output.filename = 'bundle.js';
 
