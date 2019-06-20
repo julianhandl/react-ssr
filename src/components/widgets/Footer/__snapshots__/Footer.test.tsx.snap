@@ -19,10 +19,10 @@ exports[`Footer should render correctly 1`] = `
           >
             <Link
               replace={false}
-              to="/kontakt"
+              to="/musik"
             >
               <a
-                href="/kontakt"
+                href="/musik"
                 onClick={[Function]}
               >
                 Musik
@@ -34,10 +34,10 @@ exports[`Footer should render correctly 1`] = `
           >
             <Link
               replace={false}
-              to="/kontakt"
+              to="/zelte"
             >
               <a
-                href="/kontakt"
+                href="/zelte"
                 onClick={[Function]}
               >
                 Zelte
@@ -76,10 +76,10 @@ exports[`Footer should render correctly 1`] = `
           >
             <Link
               replace={false}
-              to="/kontakt"
+              to="/musik"
             >
               <a
-                href="/kontakt"
+                href="/musik"
                 onClick={[Function]}
               >
                 <h2>
@@ -93,10 +93,10 @@ exports[`Footer should render correctly 1`] = `
               >
                 <Link
                   replace={false}
-                  to="/kontakt?paket=klein"
+                  to="/musik?variante=klein"
                 >
                   <a
-                    href="/kontakt?paket=klein"
+                    href="/musik?variante=klein"
                     onClick={[Function]}
                   >
                     Klein
@@ -108,10 +108,10 @@ exports[`Footer should render correctly 1`] = `
               >
                 <Link
                   replace={false}
-                  to="/kontakt?paket=mittel"
+                  to="/musik?variante=mittel"
                 >
                   <a
-                    href="/kontakt?paket=mittel"
+                    href="/musik?variante=mittel"
                     onClick={[Function]}
                   >
                     Mittel
@@ -123,10 +123,10 @@ exports[`Footer should render correctly 1`] = `
               >
                 <Link
                   replace={false}
-                  to="/kontakt?paket=gross"
+                  to="/musik?variante=gross"
                 >
                   <a
-                    href="/kontakt?paket=gross"
+                    href="/musik?variante=gross"
                     onClick={[Function]}
                   >
                     Groß
@@ -140,10 +140,10 @@ exports[`Footer should render correctly 1`] = `
           >
             <Link
               replace={false}
-              to="/kontakt"
+              to="/zelte"
             >
               <a
-                href="/kontakt"
+                href="/zelte"
                 onClick={[Function]}
               >
                 <h2>
@@ -153,17 +153,17 @@ exports[`Footer should render correctly 1`] = `
             </Link>
             <ul>
               <li
-                key="footer-zelt-3x4.5"
+                key="footer-zelt-4.5x3"
               >
                 <Link
                   replace={false}
-                  to="/kontakt?paket=3x4.5"
+                  to="/zelte?variante=4.5x3"
                 >
                   <a
-                    href="/kontakt?paket=3x4.5"
+                    href="/zelte?variante=4.5x3"
                     onClick={[Function]}
                   >
-                    3m x 4,5m
+                    4,5m x 3m
                   </a>
                 </Link>
               </li>
@@ -172,10 +172,10 @@ exports[`Footer should render correctly 1`] = `
               >
                 <Link
                   replace={false}
-                  to="/kontakt?paket=12x5"
+                  to="/zelte?variante=12x5"
                 >
                   <a
-                    href="/kontakt?paket=12x5"
+                    href="/zelte?variante=12x5"
                     onClick={[Function]}
                   >
                     12m x 5m

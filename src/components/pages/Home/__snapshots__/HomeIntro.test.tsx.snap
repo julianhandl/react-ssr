@@ -14,13 +14,13 @@ exports[`HomeIntro should render correctly 1`] = `
   </h1>
   <ul>
     <li>
+      Ihr persönlicher Partyservice
+    </li>
+    <li>
       Einfache online Übersicht
     </li>
     <li>
       Fixe Preise und online Buchung
-    </li>
-    <li>
-      Alles für Privatpersonen
     </li>
   </ul>
 </section>

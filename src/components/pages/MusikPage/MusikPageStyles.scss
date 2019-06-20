@@ -1,0 +1,53 @@
+@import "../../../variables.scss";
+
+.musik-page .product-selection {
+    .person {
+        rect, path, line {
+            stroke: $color-brand2 !important;
+        }
+    }
+
+    .product-selection__item--klein {
+        .small-speaker {
+            rect, path, line {
+                stroke: $color-brand2 !important;
+            }
+        }
+    }
+    .product-selection__item--mittel {
+        .medium-speaker, .column-speaker {
+            rect, path, line {
+                stroke: $color-brand2 !important;
+            }
+        }
+        .medium-speaker {
+            &:nth-child(1),
+            &:nth-child(2){
+                fill: $color-brand2 !important;
+            }
+        }
+        .column-speaker {
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4){
+                fill: $color-brand2 !important;
+            }
+        }
+    }
+    .product-selection__item--gross {
+        .medium-speaker, .large-speaker {
+            rect, path, line {
+                stroke: $color-brand2 !important;
+            }
+        }
+        .medium-speaker, .large-speaker {
+            rect, path, line {
+                &:nth-child(1),
+                &:nth-child(2){
+                    fill: $color-brand2 !important;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,90 @@
+@import "../../../variables.scss";
+
+.product-page {
+    margin: 0 0 2rem 0;
+
+    @media screen and (min-width: $screen-m) {
+        margin: 0 0 4rem 0;
+    }
+    @media screen and (min-width: $screen-l) {
+        margin: 0 0 8rem 0;
+    }
+
+    &__title {
+        margin: 1rem 0;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        padding: $padding-vertical $padding-horizontal;
+
+        @media screen and (min-width: $screen-m) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        @media screen and (min-width: $screen-l) {
+            padding: ($padding-vertical * 3) ($padding-horizontal * 3)
+        }
+    }
+
+    // layout
+    &__data {
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (min-width: $screen-m) {
+            flex: 1;            
+        }
+    }
+
+    &__visual {
+        &:first-child {
+            .product-page__images {
+                display: flex;
+            }
+            .product-page__timetable {
+                display: none;
+            }
+
+            @media screen and (min-width: $screen-m) {
+                flex: 1;
+
+                .product-page__timetable {
+                    display: flex;
+                }
+            }
+        }
+        &:last-child {
+            .product-page__images {
+                display: none;
+            }
+            .product-page__timetable {
+                display: flex;
+            }
+
+            @media screen and (min-width: $screen-m) {
+                display: none;
+                flex: 1;
+            }
+        }
+    }
+
+    &__special {
+        margin: 2rem 0 0 0;
+        padding: 2rem 0 0 0;
+        border-top: 0.125rem solid$color-border;
+
+        &-text {
+            padding: $padding-vertical $padding-horizontal;
+            background: #fff;
+
+            h2 {
+                margin: 0;
+            }
+            p {
+                margin: 1rem 0 0 0;
+            }
+        }
+    }
+}

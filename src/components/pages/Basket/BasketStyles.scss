@@ -1,0 +1,22 @@
+@import "../../../variables.scss";
+
+.basket {
+    padding: 0 0 2rem 0;
+
+    h1 {
+        margin: 1rem 0;
+    }
+
+    &__content {
+        @media screen and (min-width: $screen-l) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__data {
+        @media screen and (min-width: $screen-l) {
+            width: 28rem;
+        }
+    }
+}

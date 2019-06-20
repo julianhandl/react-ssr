@@ -9,6 +9,7 @@ const Logo = require("../../../resources/images/logo.svg");
 
 import './HeaderStyles.scss';
 import { urls } from '../../../Routes';
+import Basket from '../Icons/Basket';
 
 interface IHeaderStateProps {
     menuOpen: boolean;
@@ -34,7 +35,7 @@ export class Header extends React.Component<HeaderProps, {}> {
                     <nav className="header__menu">
                         <div
                             className={"header__menu-trigger" + (this.props.menuOpen ? ' header__menu-trigger--open' : '')}
-                            onTouchStart={() => this.props.toggleMenu()}
+                            onClick={() => this.props.toggleMenu()}
                         >
                             <Trigger />
                         </div>
@@ -44,7 +45,13 @@ export class Header extends React.Component<HeaderProps, {}> {
                                 <Link to={urls.musik} itemProp="url">Musik</Link>
                             </li>
                             */}
-                            <li itemProp="name" className={this.props.path === "/kontakt" ? "active" : ""}>
+                            <li itemProp="name" className={this.props.path === urls.musik ? "active" : ""}>
+                                <Link to={urls.musik} itemProp="url">Musik</Link>
+                            </li>
+                            <li itemProp="name" className={this.props.path === urls.zelt ? "active" : ""}>
+                                <Link to={urls.zelt} itemProp="url">Zelte</Link>
+                            </li>
+                            <li itemProp="name" className={this.props.path === urls.kontakt ? "active" : ""}>
                                 <Link to={urls.kontakt} itemProp="url">Kontakt</Link>
                             </li>
                             {/*
@@ -58,6 +65,10 @@ export class Header extends React.Component<HeaderProps, {}> {
                             })}
                             */}
                         </ul>
+                        <Link to={urls.warenkorb} className={"header__menu-basket"}>
+                            <Basket />
+                            <span>0</span>
+                        </Link>
                     </nav>
                 </header>
             </div>

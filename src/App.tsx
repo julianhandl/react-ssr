@@ -1,6 +1,6 @@
 // Import react
 import React from 'react';
-import {Switch, Link, Route} from 'react-router-dom';
+import {Switch, Route, withRouter} from 'react-router-dom';
 import Header from './components/widgets/Header/Header';
 import {Footer} from "./components/widgets/Footer";
 import {Helmet} from "react-helmet";
@@ -9,11 +9,15 @@ const GradientKlein = require("./resources/images/gradient_klein.svg");
 const GradientGross = require("./resources/images/gradient_gross.svg");
 const GradientSehrGross = require("./resources/images/gradient_sehr_gross.svg");
 
+// initReactFastclick();
+
 // Import routes
 import { websiteRoutes } from './Routes';
 
 // Styles
 import './global.scss';
+import { connect } from 'react-redux';
+import { IState } from './reducers/root-reducer';
 
 interface IAppProps {
     location: any;
@@ -22,9 +26,9 @@ interface IAppProps {
 // Defined root app
 // WARNING: Do not connect this component to redux.
 // otherwise the router will not work
-class App extends React.Component<IAppProps>{
+class AppClass extends React.Component<IAppProps>{
     componentDidUpdate(prevProps: IAppProps) {
-        if(prevProps.location !== this.props.location) {
+        if(prevProps.location.pathname !== this.props.location.pathname) {
             window.scrollTo(0, 0);
         }
     }
@@ -53,6 +57,27 @@ class App extends React.Component<IAppProps>{
                 <meta property="og:title" content="Party Partner - mieten Sie was sonst verstauben würde"/>
                 <meta property="og:description" content="Party Partner ist der Partyverleih für Ihr Event. Von Musikanlage bis Zelt." />
                 <meta property="og:urls" content="https://partypartner.at" />
+
+                <script type="application/ld+json">{`
+                    { "@context" : "http://schema.org",
+                    "@type" : "Organization",
+                    "legalName" : "Party Partner, Julian Handl",
+                    "url" : "https://partypartner.at/",
+                    "contactPoint" : [{
+                        "@type" : "ContactPoint",
+                        "telephone" : "+43-677-63167169",
+                        "email" : "office@partypartner.at",
+                        "contactType" : "customer service"
+                    }],
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Erlauf, Austria",
+                        "postalCode": "3253",
+                        "streetAddress": "Dreihäuslweg 2"
+                    },
+                    "logo" : "https://consensio-grafikdesign.at/public/images/logo.svg"
+                    }`}
+                </script>
             </Helmet>
             <Header />
             <Switch>
@@ -64,7 +89,15 @@ class App extends React.Component<IAppProps>{
     }
 }
 
+function mapStateToProps(state: IState) : IAppProps {
+    return {
+        location: state.router.location
+    }
+}
+
+const App = withRouter(connect(mapStateToProps, () => ({}))(AppClass));
+
 export {
-    App,
-    websiteRoutes
+    websiteRoutes,
+    App
 };

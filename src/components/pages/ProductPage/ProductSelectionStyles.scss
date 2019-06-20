@@ -1,0 +1,126 @@
+@import "../../../variables.scss";
+
+.product-selection {
+    @media screen and (min-width: $screen-m) {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &__item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-decoration: none;
+        color: $color-text;
+        border: 0.0625rem solid $color-border;
+        padding: 0.5rem 0.8rem;
+        margin: 0.5rem 0;
+
+        @media screen and (min-width: $screen-m) {
+            flex: 1;
+            flex-direction: column;
+            padding: 1rem 1rem;
+            margin: 0 0.5rem;
+            border-radius: $border-radius;
+        }
+
+        &:first-child {
+            margin-top: 0;
+            margin-left: 0;
+        }
+        &:last-child {
+            margin-bottom: 0;
+            margin-right: 0;
+        }
+
+        &--active {
+            border-color: $color-brand;
+
+            .product-selection__item-title {
+                color: $color-brand;
+            }
+        }
+
+        &-title {
+            width: 40%;
+            margin: 0;
+            font-size: 1.5rem;
+
+            small {
+                display: block;
+                color: $color-text;
+                font-size: 0.8rem;
+                line-height: 0.5;
+                font-weight: normal;
+
+                @media screen and (min-width: $screen-m) {
+                    display: none
+                }
+
+            }
+
+            @media screen and (min-width: $screen-m) {
+                text-align: center;
+                width: 100%;
+                font-size: 2rem;
+            }
+        }
+        &-image {
+            width: 30%;
+            text-align: center;
+            transform: translateY(0.2rem);
+
+            @media screen and (min-width: $screen-m) {
+                margin: 1.5rem 0 0 0;
+                transform: none;
+                width: 70%;
+            }
+
+            img, svg {
+                max-height: 3rem;
+                width: auto;
+                max-width: 100%;
+
+                @media screen and (min-width: $screen-m) {
+                    width: 100%;
+                    max-height: 5rem;
+                }
+            }
+        }
+        &-price {
+            width: 30%;
+            text-align: right;
+            font-weight: bold;
+            color: $color-brand;
+            font-size: 1.5rem;
+
+            @media screen and (min-width: $screen-m) {
+                margin: 1.5rem 0 0 0;
+                width: 100%;
+                text-align: center;
+                font-size: 2rem;
+            }
+        }
+        &-hint {
+            display: none;
+
+            @media screen and (min-width: $screen-m) {
+                position: absolute;
+                bottom: -0.5rem;
+                left: 0;
+                right: 0;
+                display: block;
+                color: $color-border;
+                font-size: 0.8rem;
+                text-align: center;
+
+                span {
+                    display: inline-block;
+                    padding: 0 0.5rem;
+                    background: #fff;
+                }
+            }
+        }
+    }
+}

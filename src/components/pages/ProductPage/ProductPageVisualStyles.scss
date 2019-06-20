@@ -1,0 +1,60 @@
+@import "../../../variables.scss";
+
+.product-page__visual {
+    @media screen and (min-width: $screen-m) {
+        padding: 0 2rem 0 0;
+    }
+}
+
+.product-page__images {
+    margin: 2rem 0 3rem 0;
+    justify-content: center;
+
+    @media screen and (min-width: $screen-m) {
+        justify-content: flex-start;
+    }
+
+    img, svg {
+        max-width: 80%;
+        height: auto;
+    }
+
+    & + .product-page__timetable {
+        @media screen and (min-width: $screen-m) {
+            margin: 4rem 0 0 0;
+        }
+    }
+}
+
+.product-page__timetable {
+    flex-direction: column;
+
+    h3 {
+        margin: 0 0 0.5rem 0;
+    }
+
+    table {
+        font-size: 0.8rem;
+        border-collapse: collapse;
+
+        @media screen and (min-width: $screen-m) {
+            font-size: 1rem;
+        }
+
+        td, th {
+            padding: 0.5rem;
+            border: 0.0625rem solid $color-border;
+            text-align: right;
+
+            &:first-child {
+                text-align: left;
+            }
+        }
+
+        tr.active {
+            td {
+                color: $color-brand;
+            }
+        }
+    }
+}

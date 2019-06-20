@@ -11,10 +11,10 @@ const Footer : React.FC = () => {
                 <div className="container">
                     <div className="footer__headline-items">
                         <div className="footer__headline-item">
-                            <Link to={urls.kontakt}>Musik</Link>
+                            <Link to={urls.musik}>Musik</Link>
                         </div>
                         <div className="footer__headline-item">
-                            <Link to={urls.kontakt}>Zelte</Link>
+                            <Link to={urls.zelt}>Zelte</Link>
                         </div>
                         <div className="footer__headline-item">
                             <Link to={urls.kontakt}>Wissen</Link>
@@ -26,18 +26,18 @@ const Footer : React.FC = () => {
                 <div className="container">
                     <div className="footer__main-items">
                         <div className="footer__main-item">
-                            <Link to={urls.kontakt}><h2>Musik</h2></Link>
+                            <Link to={urls.musik}><h2>Musik</h2></Link>
                             <ul>
                                 {Object.keys(packageMusik.variants).map((key: string) => {
-                                    return <li key={`footer-musik-${key}`}><Link to={`${urls.kontakt}?paket=${key}`}>{packageMusik.variants[key].title}</Link></li>
+                                    return <li key={`footer-musik-${key}`}><Link to={`${urls.musik}?variante=${key}`}>{packageMusik.variants[key].title}</Link></li>
                                 })}
                             </ul>
                         </div>
                         <div className="footer__main-item">
-                            <Link to={urls.kontakt}><h2>Zelte</h2></Link>
+                            <Link to={urls.zelt}><h2>Zelte</h2></Link>
                             <ul>
                                 {Object.keys(partyZelt.variants).map((key: string) => {
-                                    return <li key={`footer-zelt-${key}`}><Link to={`${urls.kontakt}?paket=${key}`}>{partyZelt.variants[key].title}</Link></li>
+                                    return <li key={`footer-zelt-${key}`}><Link to={`${urls.zelt}?variante=${key}`}>{partyZelt.variants[key].title}</Link></li>
                                 })}
                             </ul>
                         </div>

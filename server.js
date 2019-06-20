@@ -51,6 +51,7 @@ var sitemap = sm.createSitemap ({
     hostname: domain,
     cacheTime: 600000,        // 600 sec - cache purge period
     urls: websiteRoutes
+        .filter(function(route){ return route.navigation })
         .filter(function(route){ return route.path !== '*' && route.path !== "/"})
         .map(function(route){
             return {

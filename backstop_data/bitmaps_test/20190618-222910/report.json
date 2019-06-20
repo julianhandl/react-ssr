@@ -1,0 +1,198 @@
+{
+  "testSuite": "BackstopJS",
+  "tests": [
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_Homepage_0__0_phone.png",
+        "test": "..\\bitmaps_test\\20190618-222910\\backstop_default_Homepage_0__0_phone.png",
+        "selector": "",
+        "fileName": "backstop_default_Homepage_0__0_phone.png",
+        "label": "Homepage",
+        "misMatchThreshold": 0.1,
+        "url": "http://localhost:8080/",
+        "expect": 0,
+        "viewportLabel": "phone",
+        "engineErrorMsg": "net::ERR_CONNECTION_REFUSED at http://localhost:8080/",
+        "error": "Reference file not found E:\\Projekte\\partypartner\\frontend\\backstop_data\\bitmaps_reference\\backstop_default_Homepage_0__0_phone.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_Homepage_0__1_tablet.png",
+        "test": "..\\bitmaps_test\\20190618-222910\\backstop_default_Homepage_0__1_tablet.png",
+        "selector": "",
+        "fileName": "backstop_default_Homepage_0__1_tablet.png",
+        "label": "Homepage",
+        "misMatchThreshold": 0.1,
+        "url": "http://localhost:8080/",
+        "expect": 0,
+        "viewportLabel": "tablet",
+        "engineErrorMsg": "net::ERR_CONNECTION_REFUSED at http://localhost:8080/",
+        "error": "Reference file not found E:\\Projekte\\partypartner\\frontend\\backstop_data\\bitmaps_reference\\backstop_default_Homepage_0__1_tablet.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_Homepage_0__2_desktop.png",
+        "test": "..\\bitmaps_test\\20190618-222910\\backstop_default_Homepage_0__2_desktop.png",
+        "selector": "",
+        "fileName": "backstop_default_Homepage_0__2_desktop.png",
+        "label": "Homepage",
+        "misMatchThreshold": 0.1,
+        "url": "http://localhost:8080/",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "engineErrorMsg": "net::ERR_CONNECTION_REFUSED at http://localhost:8080/",
+        "error": "Reference file not found E:\\Projekte\\partypartner\\frontend\\backstop_data\\bitmaps_reference\\backstop_default_Homepage_0__2_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_Musik_Page_0__0_phone.png",
+        "test": "..\\bitmaps_test\\20190618-222910\\backstop_default_Musik_Page_0__0_phone.png",
+        "selector": "",
+        "fileName": "backstop_default_Musik_Page_0__0_phone.png",
+        "label": "Musik Page",
+        "misMatchThreshold": 0.1,
+        "url": "http://localhost:8080/musik",
+        "expect": 0,
+        "viewportLabel": "phone",
+        "engineErrorMsg": "net::ERR_CONNECTION_REFUSED at http://localhost:8080/musik",
+        "error": "Reference file not found E:\\Projekte\\partypartner\\frontend\\backstop_data\\bitmaps_reference\\backstop_default_Musik_Page_0__0_phone.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_Musik_Page_0__1_tablet.png",
+        "test": "..\\bitmaps_test\\20190618-222910\\backstop_default_Musik_Page_0__1_tablet.png",
+        "selector": "",
+        "fileName": "backstop_default_Musik_Page_0__1_tablet.png",
+        "label": "Musik Page",
+        "misMatchThreshold": 0.1,
+        "url": "http://localhost:8080/musik",
+        "expect": 0,
+        "viewportLabel": "tablet",
+        "engineErrorMsg": "net::ERR_CONNECTION_REFUSED at http://localhost:8080/musik",
+        "error": "Reference file not found E:\\Projekte\\partypartner\\frontend\\backstop_data\\bitmaps_reference\\backstop_default_Musik_Page_0__1_tablet.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_Musik_Page_0__2_desktop.png",
+        "test": "..\\bitmaps_test\\20190618-222910\\backstop_default_Musik_Page_0__2_desktop.png",
+        "selector": "",
+        "fileName": "backstop_default_Musik_Page_0__2_desktop.png",
+        "label": "Musik Page",
+        "misMatchThreshold": 0.1,
+        "url": "http://localhost:8080/musik",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "engineErrorMsg": "net::ERR_CONNECTION_REFUSED at http://localhost:8080/musik",
+        "error": "Reference file not found E:\\Projekte\\partypartner\\frontend\\backstop_data\\bitmaps_reference\\backstop_default_Musik_Page_0__2_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_Zelt_Page_0__0_phone.png",
+        "test": "..\\bitmaps_test\\20190618-222910\\backstop_default_Zelt_Page_0__0_phone.png",
+        "selector": "",
+        "fileName": "backstop_default_Zelt_Page_0__0_phone.png",
+        "label": "Zelt Page",
+        "misMatchThreshold": 0.1,
+        "url": "http://localhost:8080/zelte",
+        "expect": 0,
+        "viewportLabel": "phone",
+        "engineErrorMsg": "net::ERR_CONNECTION_REFUSED at http://localhost:8080/zelte",
+        "error": "Reference file not found E:\\Projekte\\partypartner\\frontend\\backstop_data\\bitmaps_reference\\backstop_default_Zelt_Page_0__0_phone.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_Zelt_Page_0__1_tablet.png",
+        "test": "..\\bitmaps_test\\20190618-222910\\backstop_default_Zelt_Page_0__1_tablet.png",
+        "selector": "",
+        "fileName": "backstop_default_Zelt_Page_0__1_tablet.png",
+        "label": "Zelt Page",
+        "misMatchThreshold": 0.1,
+        "url": "http://localhost:8080/zelte",
+        "expect": 0,
+        "viewportLabel": "tablet",
+        "engineErrorMsg": "net::ERR_CONNECTION_REFUSED at http://localhost:8080/zelte",
+        "error": "Reference file not found E:\\Projekte\\partypartner\\frontend\\backstop_data\\bitmaps_reference\\backstop_default_Zelt_Page_0__1_tablet.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_Zelt_Page_0__2_desktop.png",
+        "test": "..\\bitmaps_test\\20190618-222910\\backstop_default_Zelt_Page_0__2_desktop.png",
+        "selector": "",
+        "fileName": "backstop_default_Zelt_Page_0__2_desktop.png",
+        "label": "Zelt Page",
+        "misMatchThreshold": 0.1,
+        "url": "http://localhost:8080/zelte",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "engineErrorMsg": "net::ERR_CONNECTION_REFUSED at http://localhost:8080/zelte",
+        "error": "Reference file not found E:\\Projekte\\partypartner\\frontend\\backstop_data\\bitmaps_reference\\backstop_default_Zelt_Page_0__2_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_Kontakt_Page_0__0_phone.png",
+        "test": "..\\bitmaps_test\\20190618-222910\\backstop_default_Kontakt_Page_0__0_phone.png",
+        "selector": "",
+        "fileName": "backstop_default_Kontakt_Page_0__0_phone.png",
+        "label": "Kontakt Page",
+        "misMatchThreshold": 0.1,
+        "url": "http://localhost:8080/kontakt",
+        "expect": 0,
+        "viewportLabel": "phone",
+        "engineErrorMsg": "net::ERR_CONNECTION_REFUSED at http://localhost:8080/kontakt",
+        "error": "Reference file not found E:\\Projekte\\partypartner\\frontend\\backstop_data\\bitmaps_reference\\backstop_default_Kontakt_Page_0__0_phone.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_Kontakt_Page_0__1_tablet.png",
+        "test": "..\\bitmaps_test\\20190618-222910\\backstop_default_Kontakt_Page_0__1_tablet.png",
+        "selector": "",
+        "fileName": "backstop_default_Kontakt_Page_0__1_tablet.png",
+        "label": "Kontakt Page",
+        "misMatchThreshold": 0.1,
+        "url": "http://localhost:8080/kontakt",
+        "expect": 0,
+        "viewportLabel": "tablet",
+        "engineErrorMsg": "net::ERR_CONNECTION_REFUSED at http://localhost:8080/kontakt",
+        "error": "Reference file not found E:\\Projekte\\partypartner\\frontend\\backstop_data\\bitmaps_reference\\backstop_default_Kontakt_Page_0__1_tablet.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_Kontakt_Page_0__2_desktop.png",
+        "test": "..\\bitmaps_test\\20190618-222910\\backstop_default_Kontakt_Page_0__2_desktop.png",
+        "selector": "",
+        "fileName": "backstop_default_Kontakt_Page_0__2_desktop.png",
+        "label": "Kontakt Page",
+        "misMatchThreshold": 0.1,
+        "url": "http://localhost:8080/kontakt",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "engineErrorMsg": "net::ERR_CONNECTION_REFUSED at http://localhost:8080/kontakt",
+        "error": "Reference file not found E:\\Projekte\\partypartner\\frontend\\backstop_data\\bitmaps_reference\\backstop_default_Kontakt_Page_0__2_desktop.png"
+      },
+      "status": "fail"
+    }
+  ],
+  "id": "backstop_default"
+}

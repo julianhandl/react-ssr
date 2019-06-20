@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest",
     "test-u": "jest -u",
+    "test-ui": "backstop test",
     "start": "node ./server.js",
     "build": "webpack --mode production --config ./config/webpack.config.server.js && webpack --mode production --config config/webpack.config.browser.js",
     "build-server": "webpack --mode production --config ./config/webpack.config.server.js",

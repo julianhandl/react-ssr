@@ -19,7 +19,7 @@ export class Home extends React.Component<any, {}>{
         return[
             <Helmet key='helmet-key-home'>
                 <title>Home | Party Partner</title>
-                <meta name="description" content="Das ist die Home Seite" />
+                <meta name="description" content="Party Partner ist Ihre persönlische Party Vermietung. Von Musikanlagen bis Zelten für Ihre perfekte Veranstaltung." />
             </Helmet>,
             this.renderContent()
         ];

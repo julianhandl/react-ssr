@@ -1,26 +1,22 @@
 import React from 'react';
+import {frontendUrls} from "../../core/rest/urls";
 
 import Home from './components/pages/Home/Home';
 import Kontakt from './components/pages/Kontakt/Kontakt';
 import Impressum from './components/pages/Impressum/Impressum';
 import Datenschutz from './components/pages/Datenschutz/Datenschutz';
 import NotFound from './components/pages/404/404';
+import MusikPage from './components/pages/MusikPage/MusikPage';
+import products, { packageMusik, partyZelt } from '../../data/products';
+import ZeltPage from './components/pages/ZeltPage/ZeltPage';
+import Basket from './components/pages/Basket/Basket';
+import { IProductVariant } from '../../core/interfaces/IProduct';
 //import About from './components/pages/About';
 //import NoMatch from './components/pages/404';
 
 //import {fetchInit as homeFetchInit} from './actions/home';
 
-export const urls = {
-    musik: "/musik",
-    zelt: "/zelte",
-    kontakt: "/kontakt",
-    impressum: "/impressum",
-    datenschutz: "/datenschutz",
-    wissen: "/wissen",
-    beratung: "/beratung",
-    begriffe: "/begriffe",
-    blog: "/blog",
-}
+export const urls = frontendUrls;
 
 export interface WebsiteRoute {
     path: string;
@@ -45,6 +41,42 @@ export const websiteRoutes : WebsiteRoute[] = [{
     }
     */
 },{
+    path: urls.musik,
+    exact: true,
+    component: MusikPage,
+    title: "Musikanlage",
+    navigation: true,
+    routes: undefined
+},
+...Object.keys(packageMusik.variants).map((key: string) => {
+    return {
+        path: `${urls.musik}?variante=${key}`,
+        exact: true,
+        component: MusikPage,
+        title: "Musikanlage",
+        navigation: true,
+        routes: undefined
+    }
+}),
+{
+    path: urls.zelt,
+    exact: true,
+    component: ZeltPage,
+    title: "Zelt",
+    navigation: true,
+    routes: undefined
+},
+...Object.keys(partyZelt.variants).map((key: string) => {
+    return {
+        path: `${urls.zelt}?variante=${key}`,
+        exact: true,
+        component: MusikPage,
+        title: "Zelt",
+        navigation: true,
+        routes: undefined
+    }
+}),
+{
     path: urls.kontakt,
     exact: true,
     component: Kontakt,
@@ -56,6 +88,13 @@ export const websiteRoutes : WebsiteRoute[] = [{
         return homeFetchInit();
     }
     */
+},{
+    path: urls.warenkorb,
+    exact: true,
+    component: Basket,
+    title: "Warenkorb",
+    navigation: true,
+    routes: undefined,
 },{
     path: urls.impressum,
     exact: true,
@@ -84,3 +123,5 @@ export const websiteRoutes : WebsiteRoute[] = [{
     path: "*",
     component: () => <NotFound key="404" name="404" contentTitle="Nicht Gefunden" metaTitle="404 | Party Partner" metaDescription="" />,
 }];
+
+// variants

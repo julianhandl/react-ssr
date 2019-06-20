@@ -1,0 +1,66 @@
+@import "../../../variables.scss";
+
+.basket__data {
+    background: #fff;
+    border-radius: $border-radius;
+    padding: $padding-vertical $padding-horizontal;
+
+    table {
+        table-layout: fixed;
+        width: 100%;
+
+        td {
+            padding: 0.3125rem 0;
+
+            &:first-child {
+                vertical-align: top;
+                width: 7rem;
+                padding-top: 1rem;
+            }
+        }
+
+        hr {
+            border: none;
+            height: 0.0625rem;
+            background: $color-border;
+        }
+
+        input[type=text],
+        input[type=email],
+        textarea {
+            width: 100%;
+            border: none;
+            background: $color-input;
+            border-radius: $border-radius;
+            font-size: 1rem;
+            padding: 0.8rem 1rem;
+        }
+
+        .checkbox {
+            margin: 0.2rem 0;
+
+            & + span {
+                margin: 0 0 0 2rem;
+            }
+        }
+    }
+
+    &-datenschutz {
+        display: block;
+        font-size: 0.8rem;
+        margin: 0.5rem 0 0 0 !important;
+    }
+
+    button[type=submit] {
+        display: inline-block;
+        margin: 2rem 0 0 0;
+        border: none;
+        background: $color-brand2;
+        border-radius: $border-radius;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: bold;
+        padding: 1rem 1.3rem;
+        cursor: pointer;
+    }
+}

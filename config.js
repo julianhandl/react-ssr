@@ -3,5 +3,5 @@ module.exports = {
     servePublic: true,
     caching: true,
     cachingHours: 24,
-    domain: 'https://julianhandl.at'
+    domain: 'https://partypartner.at'
 }

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1040" height="517.696" viewBox="0 0 1040 517.696">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="1040" height="517.696" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="IconsV2" clip-path="url(#clip-path)">
+    <g id="Gruppe_2" data-name="Gruppe 2" transform="translate(-1289 -60.304)">
+      <g id="Tent">
+        <path id="Pfad_9" data-name="Pfad 9" d="M2055.5,578V188c-155.5-26-245-117-245-117s-89.5,91-245,117V578" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+        <line id="Linie_12" data-name="Linie 12" x2="491" transform="translate(1564 192.5)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+      </g>
+      <g id="People_left" data-name="People left">
+        <g id="Person">
+          <path id="Pfad_10" data-name="Pfad 10" d="M1352,271.333a22,22,0,1,1-22-22A22,22,0,0,1,1352,271.333Z" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_13" data-name="Linie 13" y2="130" transform="translate(1330 310)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="38"/>
+          <line id="Linie_14" data-name="Linie 14" x2="58" transform="translate(1299 317.5)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_15" data-name="Linie 15" y2="142" transform="translate(1318.5 436)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_16" data-name="Linie 16" y2="142" transform="translate(1341.5 436)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_17" data-name="Linie 17" y2="129" transform="translate(1296.5 310)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_18" data-name="Linie 18" y2="129" transform="translate(1362.5 310)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+        </g>
+        <g id="Person-2" data-name="Person">
+          <path id="Pfad_11" data-name="Pfad 11" d="M1465,271.333a22,22,0,1,1-22-22A22,22,0,0,1,1465,271.333Z" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_19" data-name="Linie 19" y2="130" transform="translate(1443 310)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="38"/>
+          <line id="Linie_20" data-name="Linie 20" x2="58" transform="translate(1412 317.5)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_21" data-name="Linie 21" y2="142" transform="translate(1431.5 436)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_22" data-name="Linie 22" y2="142" transform="translate(1454.5 436)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_23" data-name="Linie 23" y2="129" transform="translate(1409.5 310)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_24" data-name="Linie 24" y2="129" transform="translate(1475.5 310)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+        </g>
+      </g>
+      <g id="People_right" data-name="People right">
+        <g id="Person-3" data-name="Person">
+          <path id="Pfad_12" data-name="Pfad 12" d="M2198,271.333a22,22,0,1,1-22-22A22,22,0,0,1,2198,271.333Z" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_25" data-name="Linie 25" y2="130" transform="translate(2176 310)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="38"/>
+          <line id="Linie_26" data-name="Linie 26" x2="58" transform="translate(2145 317.5)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_27" data-name="Linie 27" y2="142" transform="translate(2164.5 436)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_28" data-name="Linie 28" y2="142" transform="translate(2187.5 436)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_29" data-name="Linie 29" y2="129" transform="translate(2142.5 310)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_30" data-name="Linie 30" y2="129" transform="translate(2208.5 310)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+        </g>
+        <g id="Person-4" data-name="Person">
+          <path id="Pfad_13" data-name="Pfad 13" d="M2311,271.333a22,22,0,1,1-22-22A22,22,0,0,1,2311,271.333Z" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_31" data-name="Linie 31" y2="130" transform="translate(2289 310)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="38"/>
+          <line id="Linie_32" data-name="Linie 32" x2="58" transform="translate(2258 317.5)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_33" data-name="Linie 33" y2="142" transform="translate(2277.5 436)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_34" data-name="Linie 34" y2="142" transform="translate(2300.5 436)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_35" data-name="Linie 35" y2="129" transform="translate(2255.5 310)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_36" data-name="Linie 36" y2="129" transform="translate(2321.5 310)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+        </g>
+      </g>
+      <g id="People_center" data-name="People center">
+        <g id="Person-5" data-name="Person">
+          <path id="Pfad_14" data-name="Pfad 14" d="M1718.5,271.333a22,22,0,1,1-22-22A22,22,0,0,1,1718.5,271.333Z" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_37" data-name="Linie 37" y2="130" transform="translate(1696 310)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="38"/>
+          <line id="Linie_38" data-name="Linie 38" x2="58" transform="translate(1665 317.5)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_39" data-name="Linie 39" y2="142" transform="translate(1684.5 436)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_40" data-name="Linie 40" y2="142" transform="translate(1707.5 436)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_41" data-name="Linie 41" y2="129" transform="translate(1662.5 310)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_42" data-name="Linie 42" y2="129" transform="translate(1728.5 310)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+        </g>
+        <g id="Person-6" data-name="Person">
+          <path id="Pfad_15" data-name="Pfad 15" d="M1831.5,271.333a22,22,0,1,1-22-22A22,22,0,0,1,1831.5,271.333Z" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_43" data-name="Linie 43" y2="130" transform="translate(1809 310)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="38"/>
+          <line id="Linie_44" data-name="Linie 44" x2="58" transform="translate(1778 317.5)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_45" data-name="Linie 45" y2="142" transform="translate(1797.5 436)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_46" data-name="Linie 46" y2="142" transform="translate(1820.5 436)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_47" data-name="Linie 47" y2="129" transform="translate(1775.5 310)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_48" data-name="Linie 48" y2="129" transform="translate(1841.5 310)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+        </g>
+        <g id="Person-7" data-name="Person">
+          <path id="Pfad_16" data-name="Pfad 16" d="M1944.5,271.333a22,22,0,1,1-22-22A22,22,0,0,1,1944.5,271.333Z" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_49" data-name="Linie 49" y2="130" transform="translate(1922 310)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="38"/>
+          <line id="Linie_50" data-name="Linie 50" x2="58" transform="translate(1891 317.5)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_51" data-name="Linie 51" y2="142" transform="translate(1910.5 436)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_52" data-name="Linie 52" y2="142" transform="translate(1933.5 436)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_53" data-name="Linie 53" y2="129" transform="translate(1888.5 310)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+          <line id="Linie_54" data-name="Linie 54" y2="129" transform="translate(1954.5 310)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="15"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

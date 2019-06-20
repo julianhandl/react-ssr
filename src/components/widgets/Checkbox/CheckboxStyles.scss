@@ -1,0 +1,68 @@
+@import "../../../variables.scss";
+
+.checkbox {
+    display: inline-block;
+    position: relative;
+    background: $color-input;
+    border-radius: $border-radius;
+    cursor: pointer;
+
+    input {
+        display: block;
+        -webkit-appearance: none;
+        appearance: none;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 2;
+        cursor: pointer;
+
+        &:checked + .checkbox__visual {
+            .checkbox__visual-background {
+                width: 3rem;
+                transform: translateX(0);
+            }
+            .checkbox__visual-yes {
+                color: #fff;
+            }
+            .checkbox__visual-no {
+                color: $color-border;
+            }
+        }
+    }
+    
+    &__visual {
+        display: inline-block;
+        color: $color-border;
+
+
+        &-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            border-radius: $border-radius;
+            display: inline-block;
+            background: $color-brand;
+            width: 4rem;
+            transform: translateX(3rem);
+            transition: transform 200ms ease, width 200ms ease;
+        }
+        &-yes {
+            position: relative;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            z-index: 1;
+        }
+        &-no {
+            position: relative;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            color: #fff;
+            z-index: 1;
+        }
+    }
+}

@@ -4,9 +4,10 @@ import Home from "./Home";
 import HomeIntro from "./HomeIntro";
 import HomeDescription from "./HomeDescription";
 import HomeDelivery from "./HomeDelivery";
+import { MemoryRouter } from "react-router";
 
 describe("Home", () => {
-    const wrapper = mount(<div><Home /></div>);
+    const wrapper = mount(<MemoryRouter><Home /></MemoryRouter>);
 
     it("should render a page", () => {
         expect(wrapper.find(".page.page--home").length).toBe(1);

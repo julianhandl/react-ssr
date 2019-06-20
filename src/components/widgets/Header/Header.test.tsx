@@ -22,12 +22,12 @@ describe("Header", () => {
         expect(wrapperOpen.find(".header__menu-list--open").length).toBe(1);
 
         expect(wrapper.find(".header__menu-list--open").length).toBe(0);
-        expect(wrapper.find(".header__menu-list li").length).toBe(1);
-        expect(wrapper.find(Link).length).toBe(2);
+        expect(wrapper.find(".header__menu-list li").length).toBe(3);
+        expect(wrapper.find(Link).length).toBe(4);
         expect(wrapper.find(".header__menu-list li.active").length).toBe(1);
         expect(wrapper.find(".header__menu-list li.active a").text()).toBe("Kontakt");
 
-        wrapper.find(".header__menu-trigger").simulate("touchstart");
+        wrapper.find(".header__menu-trigger").simulate("click");
         expect(clickMock.mock.calls.length).toBe(1);
     })
 

@@ -3,9 +3,10 @@ import { mount } from "enzyme";
 import HomeDescription from "./HomeDescription";
 import HomeIntro from "./HomeIntro";
 import { packageMusik, partyZelt } from "../../../../../data/products";
+import { MemoryRouter } from "react-router";
 
 describe("HomeIntro", () => {
-    const wrapper = mount(<div><HomeIntro /></div>)
+    const wrapper = mount(<MemoryRouter><HomeIntro /></MemoryRouter>)
 
     it("should render correctly", () => {
         expect(wrapper.find(".container").length).toBe(1);
@@ -18,7 +19,7 @@ describe("HomeIntro", () => {
 
         //boxes
         expect(wrapper.find(".container > .home-intro > .home-intro__boxes").length).toBe(1);
-        const boxes = wrapper.find(".home-intro__box");
+        const boxes = wrapper.find(".home-intro__box").hostNodes();
         expect(boxes.length).toBe(2);
 
         const musik = packageMusik.variants[Object.keys(packageMusik.variants)[0]];

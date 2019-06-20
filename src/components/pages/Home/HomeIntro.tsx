@@ -2,6 +2,8 @@ import React from 'react';
 import {packageMusik, partyZelt} from "../../../../../data/products";
 
 import './HomeIntroStyles.scss';
+import { Link } from 'react-router-dom';
+import { urls } from '../../../Routes';
 
 const HomeIntro : React.FunctionComponent = () => {
     const musik = packageMusik.variants[Object.keys(packageMusik.variants)[0]];
@@ -16,9 +18,10 @@ const HomeIntro : React.FunctionComponent = () => {
                         <small>was sonst verstauben würde</small>
                     </h1>
                     <ul>
+                        <li>Ihr persönlicher Partyservice</li>
                         <li>Einfache online Übersicht</li>
                         <li>Fixe Preise und online Buchung</li>
-                        <li>Alles für Privatpersonen</li>
+                        {/* <li>Alles für Privatpersonen</li> */}
                     </ul>
                     {/*
                     <div className="home-intro__action">
@@ -28,7 +31,7 @@ const HomeIntro : React.FunctionComponent = () => {
                     */}
                 </section>
                 <div className="home-intro__boxes">
-                    <section className="home-intro__box">
+                    <Link to={urls.musik} className="home-intro__box">
                         <h2>{packageMusik.shortTitle}</h2>
                         <p>{packageMusik.description}</p>
                         <div className="home-intro__box-price">
@@ -36,8 +39,8 @@ const HomeIntro : React.FunctionComponent = () => {
                             <span>{(musik.priceCents / 100).toFixed(0)}€</span>
                             <small className="home-intro__box-price-day">/ Tag</small>
                         </div>
-                    </section>
-                    <section className="home-intro__box">
+                    </Link>
+                    <Link to={urls.zelt} className="home-intro__box">
                         <h2>{partyZelt.shortTitle}</h2>
                         <p>{partyZelt.description}</p>
                         <div className="home-intro__box-price">
@@ -45,7 +48,7 @@ const HomeIntro : React.FunctionComponent = () => {
                             <span>{(zelt.priceCents / 100).toFixed(0)}€</span>
                             <small className="home-intro__box-price-day">/ Tag</small>
                         </div>
-                    </section>
+                    </Link>
                 </div>
             </article>
         </div>

@@ -9,8 +9,8 @@ import reducers from '../reducers/root-reducer';
 import thunk from 'redux-thunk';
 
 // Import Router and history
-import createHistory from 'history/createBrowserHistory';
-import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux';
+import {createBrowserHistory} from 'history';
+import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
 
 declare global {
   interface Window {
@@ -21,7 +21,7 @@ declare global {
 
 export default function createEntry(App: any, dev = false){
     // create a browser history
-    const history = createHistory();
+    const history = createBrowserHistory();
     const middleware = routerMiddleware(history);
     // setup redux dev tools
     const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -48,7 +48,7 @@ export default function createEntry(App: any, dev = false){
     render(
         <Provider store={store}>
             <ConnectedRouter history={history}>
-                <App location={store.getState().router.location} />
+                <App />
             </ConnectedRouter>
         </Provider>,
         document.getElementById('root')
