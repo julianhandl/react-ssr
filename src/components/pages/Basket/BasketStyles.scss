@@ -3,6 +3,10 @@
 .basket {
     padding: 0 0 2rem 0;
 
+    @media screen and (min-width: $screen-l) {
+        padding: 0 0 6rem 0;
+    }
+
     h1 {
         margin: 1rem 0;
     }

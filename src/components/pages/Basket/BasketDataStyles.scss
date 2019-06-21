@@ -5,6 +5,10 @@
     border-radius: $border-radius;
     padding: $padding-vertical $padding-horizontal;
 
+    @media screen and (min-width: $screen-l) {
+        padding: 0.5rem $padding-horizontal $padding-vertical $padding-horizontal;
+    }
+
     table {
         table-layout: fixed;
         width: 100%;
@@ -53,7 +57,7 @@
 
     button[type=submit] {
         display: inline-block;
-        margin: 2rem 0 0 0;
+        margin: 1rem 0 0 0;
         border: none;
         background: $color-brand2;
         border-radius: $border-radius;

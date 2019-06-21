@@ -22,6 +22,7 @@ class ZeltPage extends React.Component<IMusikPageProps> {
             images: [
                 <img src={zelte} />
             ],
+            productKey: partyZelt.key,
             activeVariantKey: this.props.variant,
             variants: Object.keys(partyZelt.variants)
                 .map((key: string) : IProductPageConfigVariant => {

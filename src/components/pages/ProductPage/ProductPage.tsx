@@ -2,10 +2,7 @@ import React from "react";
 import "./ProductPageStyles.scss";
 import ProductPageVisual from "./ProductPageVisual";
 import ProductPageData from "./ProductPageData";
-import { string } from "prop-types";
-import { ProductType } from "../../../../../data/products";
 import { IProductVariant } from "../../../../../core/interfaces/IProduct";
-import Helmet from "react-helmet";
 
 export interface IProductPageConfigVariant extends IProductVariant {
     selectionImage: React.ReactNode;
@@ -17,6 +14,7 @@ export interface IProductPageConfig {
     title: string;
     className: string;
     images?: React.ReactNode[],
+    productKey: string;
     activeVariantKey: string;
     variants: IProductPageConfigVariant[]
 }

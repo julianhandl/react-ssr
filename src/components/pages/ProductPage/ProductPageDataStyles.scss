@@ -12,7 +12,7 @@
             justify-content: space-between;
         }
 
-        a {
+        button {
             display: inline-block;
             padding: 1rem 2rem;
             background: $color-brand;
@@ -23,6 +23,8 @@
             margin: 0.5rem 0 0 0;
             width: 100%;
             text-align: center;
+            border: none;
+            cursor: pointer;
 
             @media screen and (min-width: $screen-m) {
                 width: auto;

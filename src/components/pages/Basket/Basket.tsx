@@ -6,6 +6,7 @@ import { IState } from "../../../reducers/root-reducer";
 import { basketActions } from "../../../actions/basket";
 import { IBasketState } from "../../../reducers/basket";
 import "./BasketStyles.scss";
+import BasketItems from "./BasketItems";
 
 interface IBasketStateProps {
     basket: IBasketState;
@@ -28,7 +29,9 @@ export class Basket extends React.Component<IBasketProps> {
                 <div className="basket">
                     <h1>Warenkorb</h1>
                     <div className="basket__content">
-                        <div className="basket__items"></div>
+                        <BasketItems
+                            items={basket.items}
+                        />
                         <BasketData
                             firstname={basket.firstname}
                             lastname={basket.lastname}

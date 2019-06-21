@@ -5,10 +5,18 @@ import "./ProductPageDataStyles.scss";
 import { ProductType } from "../../../../../data/products";
 import { Link } from "react-router-dom";
 import { urls } from "../../../Routes";
+import { connect } from "react-redux";
+import { basketActions } from "../../../actions/basket";
 
-interface IProductPageDataProps {
+interface IProductPageDataActionProps {
+    addToBasket: Function;
+}
+
+interface IProductPageDataOwnProps {
     configuration: IProductPageConfig;
 }
+
+interface IProductPageDataProps extends IProductPageDataOwnProps, IProductPageDataActionProps {}
 
 const typeMapping = {
     [ProductType.package]: "Package",
@@ -32,6 +40,10 @@ class ProductPageData extends React.Component<IProductPageDataProps> {
             };
         })
     }
+    handleAdd = () => {
+        const {activeVariantKey, productKey, variants} = this.props.configuration;
+        this.props.addToBasket(productKey, activeVariantKey || variants[0].key, 1);
+    }
     render() {
         const {activeVariantKey, variants} = this.props.configuration;
         const activeSelectionItem = variants.find((v) => v.key === activeVariantKey) || variants[0];
@@ -50,7 +62,7 @@ class ProductPageData extends React.Component<IProductPageDataProps> {
                         <small>/ Tag</small>
                     </div>
                 </div>
-                <Link to={urls.kontakt}>Anfrage</Link>
+                <button onClick={this.handleAdd}>In den Warenkorb</button>
             </div>
             <article className="product-page__data-text">
                 <p className="product-page__data-text-short">{activeSelectionItem.description}</p>
@@ -61,4 +73,10 @@ class ProductPageData extends React.Component<IProductPageDataProps> {
     }
 }
 
-export default ProductPageData;
+function mapDispatchToProps(dispatch: Function) : IProductPageDataActionProps {
+    return {
+        addToBasket: (productKey: string, variantKey: string, quantity: number) => dispatch(basketActions.addBasketItem(quantity, productKey, variantKey))
+    }
+}
+
+export default connect(() => {}, mapDispatchToProps)(ProductPageData);

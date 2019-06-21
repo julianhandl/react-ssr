@@ -1,6 +1,10 @@
+import { push } from "react-router-redux";
+import { urls } from "../Routes";
+
 export const BASKET_SET_FIELD = "BASKET_SET_FIELD";
 export const BASKET_SET_DELIVERY = "BASKET_SET_DELIVERY";
 export const BASKET_SET_PICKUP = "BASKET_SET_PICKUP";
+export const BASKET_ADD_ITEM = "BASKET_ADD_ITEM";
 
 export interface BASKET_SET_FIELD_ACTION {
     type: typeof BASKET_SET_FIELD;
@@ -18,15 +22,24 @@ export interface BASKET_SET_PICKUP_ACTION {
     value: boolean;
 }
 
+export interface BASKET_ADD_ITEM_ACTION {
+    type: typeof BASKET_ADD_ITEM;
+    productKey: string;
+    variantKey?: string;
+    quantity: number;
+}
+
 export type BasketActionTypes =
     BASKET_SET_FIELD_ACTION |
     BASKET_SET_DELIVERY_ACTION |
-    BASKET_SET_PICKUP_ACTION;
+    BASKET_SET_PICKUP_ACTION |
+    BASKET_ADD_ITEM_ACTION;
 
 export const basketActions = {
     setBasketField,
     setBasketDelivery,
-    setBasketPickup
+    setBasketPickup,
+    addBasketItem
 }
 
 export function setBasketField(field: string, value: any) {
@@ -48,5 +61,17 @@ export function setBasketPickup(value: boolean) {
     return {
         type: BASKET_SET_PICKUP,
         value
+    }
+}
+
+export function addBasketItem(quantity: number, productKey: string, variantKey?: string) {
+    return (dispatch: Function) => {
+        dispatch({
+            type: BASKET_ADD_ITEM,
+            quantity,
+            productKey,
+            variantKey
+        });
+        dispatch(push(urls.warenkorb));
     }
 }

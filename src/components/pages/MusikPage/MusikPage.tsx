@@ -22,6 +22,7 @@ class MusikPage extends React.Component<IMusikPageProps> {
             images: [
                 <MusikIcon />
             ],
+            productKey: packageMusik.key,
             activeVariantKey: this.props.variant,
             variants: Object.keys(packageMusik.variants)
                 .map((key: string) : IProductPageConfigVariant => {

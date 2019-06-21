@@ -1,8 +1,9 @@
-import { BasketActionTypes, BASKET_SET_FIELD, BASKET_SET_DELIVERY, BASKET_SET_PICKUP } from "../actions/basket";
+import { BasketActionTypes, BASKET_SET_FIELD, BASKET_SET_DELIVERY, BASKET_SET_PICKUP, BASKET_ADD_ITEM } from "../actions/basket";
 
 export interface IBasketItem {
-    key: string;
     quantity: number;
+    productKey: string;
+    variantKey?: string;
 }
 
 export interface IBasketState {
@@ -30,7 +31,7 @@ export interface IBasketState {
     datenschutzAccepted: boolean;
 }
 
-const basketInitialState : IBasketState = {
+const basketInitialState: IBasketState = {
     items: [],
     firstname: "",
     lastname: "",
@@ -54,7 +55,7 @@ const basketInitialState : IBasketState = {
 }
 
 export function basket(state: IBasketState = basketInitialState, action: BasketActionTypes) {
-    switch(action.type) {
+    switch (action.type) {
         case BASKET_SET_FIELD:
             return {
                 ...state,
@@ -74,6 +75,38 @@ export function basket(state: IBasketState = basketInitialState, action: BasketA
                 pickup: {
                     ...state.pickup,
                     checked: action.value
+                }
+            }
+        case BASKET_ADD_ITEM:
+            const existingItem = state.items
+                ? state.items.find((item: IBasketItem) => item.productKey === action.productKey && item.variantKey === action.variantKey)
+                : undefined
+
+            if (existingItem) {
+                return {
+                    ...state,
+                    items: state.items.map((item: IBasketItem) => {
+                        if(item.productKey === action.productKey && item.variantKey === action.variantKey) {
+                            return {
+                                ...item,
+                                quantity: item.quantity + 1
+                            }
+                        }
+                        else return item;
+                    })
+                }
+            }
+            else {
+                return {
+                    ...state,
+                    items: [
+                        ...state.items,
+                        {
+                            productKey: action.productKey,
+                            variantKey: action.variantKey,
+                            quantity: action.quantity
+                        }
+                    ]
                 }
             }
         default:
