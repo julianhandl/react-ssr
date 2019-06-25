@@ -7,7 +7,7 @@ import Impressum from './components/pages/Impressum/Impressum';
 import Datenschutz from './components/pages/Datenschutz/Datenschutz';
 import NotFound from './components/pages/404/404';
 import MusikPage from './components/pages/MusikPage/MusikPage';
-import products, { packageMusik, partyZelt } from '../../data/products';
+import { packageMusik, partyZelt } from '../../data/products';
 import ZeltPage from './components/pages/ZeltPage/ZeltPage';
 import Basket from './components/pages/Basket/Basket';
 import { IProductVariant } from '../../core/interfaces/IProduct';
@@ -18,17 +18,17 @@ import { IProductVariant } from '../../core/interfaces/IProduct';
 
 export const urls = frontendUrls;
 
-export interface WebsiteRoute {
+export interface IWebsiteRoute {
     path: string;
     component: React.ComponentClass | React.FunctionComponent,
     exact?: boolean;
     title?: string;
     navigation?: boolean;
-    routes?: WebsiteRoute[];
+    routes?: IWebsiteRoute[];
     getLoadDataAction?: Function;
 }
 
-export const websiteRoutes : WebsiteRoute[] = [{
+export const websiteRoutes : IWebsiteRoute[] = [{
     path: "/",
     exact: true,
     component: Home,

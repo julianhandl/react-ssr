@@ -16,6 +16,8 @@ interface IBasketActionProps {
     changeField: (field: string, value: any) => void;
     changePickup: (value: boolean) => void;
     changeDelivery: (value: boolean) => void;
+    changeItemQuantity: (quantity: number, productKey: string, variantKey?: string) => void;
+    removeItem: (productKey: string, variantKey?: string) => void;
 }
 
 interface IBasketProps extends IBasketStateProps, IBasketActionProps {}
@@ -31,6 +33,8 @@ export class Basket extends React.Component<IBasketProps> {
                     <div className="basket__content">
                         <BasketItems
                             items={basket.items}
+                            changeItemQuantity={this.props.changeItemQuantity}
+                            removeItem={this.props.removeItem}
                         />
                         <BasketData
                             firstname={basket.firstname}
@@ -68,6 +72,9 @@ function mapDispatchToProps(dispatch: Function) : IBasketActionProps {
         changeField: (field: string, value: any) => dispatch(basketActions.setBasketField(field, value)),
         changeDelivery: (value: any) => dispatch(basketActions.setBasketDelivery(value)),
         changePickup: (value: any) => dispatch(basketActions.setBasketPickup(value)),
+        changeItemQuantity: (quantity: number, productKey: string, variantKey?: string) =>
+            dispatch(basketActions.setBasketItemQuantity(quantity, productKey, variantKey)),
+        removeItem: (productKey: string, variantKey?: string) => dispatch(basketActions.removeBasketItem(productKey, variantKey))
     }
 }
 

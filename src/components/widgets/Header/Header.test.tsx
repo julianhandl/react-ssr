@@ -15,9 +15,10 @@ describe("Header", () => {
                 menuOpen={false}
                 path="/kontakt"
                 toggleMenu={clickMock}
+                headerCount={0}
             />
         </MemoryRouter>)
-        const wrapperOpen = mount(<MemoryRouter><Header menuOpen={true} path="/" toggleMenu={() => {}} /></MemoryRouter>)
+        const wrapperOpen = mount(<MemoryRouter><Header menuOpen={true} path="/" toggleMenu={() => {}} headerCount={0} /></MemoryRouter>)
 
         expect(wrapperOpen.find(".header__menu-list--open").length).toBe(1);
 

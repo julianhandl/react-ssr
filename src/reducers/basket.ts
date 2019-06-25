@@ -1,4 +1,4 @@
-import { BasketActionTypes, BASKET_SET_FIELD, BASKET_SET_DELIVERY, BASKET_SET_PICKUP, BASKET_ADD_ITEM } from "../actions/basket";
+import { BasketActionTypes, BASKET_SET_FIELD, BASKET_SET_DELIVERY, BASKET_SET_PICKUP, BASKET_ADD_ITEM, BASKET_SET_ITEM_QUANTITY, BASKET_REMOVE_ITEM } from "../actions/basket";
 
 export interface IBasketItem {
     quantity: number;
@@ -108,6 +108,21 @@ export function basket(state: IBasketState = basketInitialState, action: BasketA
                         }
                     ]
                 }
+            }
+        case BASKET_REMOVE_ITEM:
+            return {
+                ...state,
+                items: state.items.filter((item: IBasketItem) => item.productKey !== action.productKey && item.variantKey !== action.variantKey)
+            }
+        case BASKET_SET_ITEM_QUANTITY:
+            return {
+                ...state,
+                items: state.items.map((item: IBasketItem) => {
+                    if(item.productKey === action.productKey && item.variantKey === action.variantKey) {
+                        return {...item, quantity: action.quantity}
+                    }
+                    else return item;
+                })
             }
         default:
             return state;

@@ -10,10 +10,12 @@ const Logo = require("../../../resources/images/logo.svg");
 import './HeaderStyles.scss';
 import { urls } from '../../../Routes';
 import Basket from '../Icons/Basket';
+import { IBasketItem } from '../../../reducers/basket';
 
 interface IHeaderStateProps {
     menuOpen: boolean;
     path: string;
+    headerCount: number;
 }
 
 interface IHeaderDispatchProps {
@@ -67,7 +69,7 @@ export class Header extends React.Component<HeaderProps, {}> {
                         </ul>
                         <Link to={urls.warenkorb} className={"header__menu-basket"}>
                             <Basket />
-                            <span>0</span>
+                            <span>{this.props.headerCount}</span>
                         </Link>
                     </nav>
                 </header>
@@ -79,7 +81,8 @@ export class Header extends React.Component<HeaderProps, {}> {
 export function mapStateToProps(state: IState, ownProps: any): IHeaderStateProps {
     return {
         menuOpen: state.website ? state.website.menuOpen : false,
-        path: state.router.location && state.router.location.pathname || "/"
+        path: state.router.location && state.router.location.pathname || "/",
+        headerCount: state.basket.items ? state.basket.items.reduce((agg: number, item: IBasketItem) => agg + item.quantity, 0) :  0
     }
 }
 

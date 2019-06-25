@@ -9,7 +9,7 @@ const React = require('react');
 const ReactDOMServer = require('react-dom/server');
 
 // import redux
-const {createStore, combineReducers, applyMiddleware} = require('redux');
+const { createStore, combineReducers, applyMiddleware } = require('redux');
 const Provider = require('react-redux').Provider;
 const thunk = require('redux-thunk').default;
 
@@ -47,13 +47,13 @@ const server = express();
 const template = fs.readFileSync(__dirname + '/dist/index.html', 'utf-8');
 
 // create sitemap.xml
-var sitemap = sm.createSitemap ({
+var sitemap = sm.createSitemap({
     hostname: domain,
     cacheTime: 600000,        // 600 sec - cache purge period
     urls: websiteRoutes
-        .filter(function(route){ return route.navigation })
-        .filter(function(route){ return route.path !== '*' && route.path !== "/"})
-        .map(function(route){
+        .filter(function (route) { return route.navigation })
+        .filter(function (route) { return route.path !== '*' && route.path !== "/" })
+        .map(function (route) {
             return {
                 url: route.path + '/',
                 changefreq: 'monthly'
@@ -62,21 +62,21 @@ var sitemap = sm.createSitemap ({
 });
 
 // serve sitemap
-server.get('/sitemap.xml', function(req, res) {
-    sitemap.toXML( function (err, xml) {
+server.get('/sitemap.xml', function (req, res) {
+    sitemap.toXML(function (err, xml) {
         if (err) {
-          return res.status(500).end();
+            return res.status(500).end();
         }
         res.header('Content-Type', 'application/xml');
-        res.send( xml );
+        res.send(xml);
     });
 });
 
 // cors settings
-server.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
+server.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
 });
 
 server.use(cors());
@@ -84,7 +84,7 @@ server.use(express.json());
 server.use(express.urlencoded());
 
 // defined public route for react bundle
-if(servePublic){
+if (servePublic) {
     server.use('/public', express.static(__dirname + '/dist/public'));
 }
 
@@ -97,12 +97,12 @@ server.get('/robots.txt', function (req, res) {
 
 // serve all other routes other than /public
 server.get('*', function (req, res) {
-    if(req.url === "/favicon.ico") return;
+    if (req.url === "/favicon.ico") return;
 
     // check if we can get the response from cache
     const today = new Date();
-    if(caching && cache[req.path] && (today.getTime() - cache[req.path].time) < (1000*60*60*cachingHours)){
-        res.send(cache[req.path].response);
+    if (caching && cache[req.originalUrl] && (today.getTime() - cache[req.originalUrl].time) < (1000 * 60 * 60 * cachingHours)) {
+        res.send(cache[req.originalUrl].response);
         return;
     }
 
@@ -110,10 +110,10 @@ server.get('*', function (req, res) {
     let loadDataAction = undefined;
     websiteRoutes.some(route => {
         const match = matchPath(req.url, route);
-        if(match && route.getLoadDataAction) loadDataAction = route.getLoadDataAction(match);
+        if (match && route.getLoadDataAction) loadDataAction = route.getLoadDataAction(match);
         return match;
     });
-    
+
     // create redux store
     const store = createStore(
         combineReducers({
@@ -121,22 +121,34 @@ server.get('*', function (req, res) {
             router: routerReducer
         }),
         applyMiddleware(thunk)
-    ); 
+    );
 
     // set correct router path in store
-    store.dispatch({
-        type: "@@router/LOCATION_CHANGE",
-        payload: { pathname: req.path }
-    });
+    const path = req.originalUrl;
+    if (path.indexOf("?") >= 0) {
+        store.dispatch({
+            type: "@@router/LOCATION_CHANGE",
+            payload: {
+                pathname: path.substr(0, path.indexOf("?")),
+                search: path.substr(path.indexOf("?"))
+            }
+        });
+    }
+    else {
+        store.dispatch({
+            type: "@@router/LOCATION_CHANGE",
+            payload: { pathname: req.originalUrl }
+        });
+    }
 
-    if(loadDataAction){
+    if (loadDataAction) {
         // dispatch the loadDataAction and render App with data
         store.dispatch(loadDataAction)
             .then(() => {
-                try{
+                try {
                     renderAndSend(req, res, store, today);
                 }
-                catch(err){
+                catch (err) {
                     console.error(err)
                 }
             })
@@ -144,7 +156,7 @@ server.get('*', function (req, res) {
                 res.sendStatus(500, err)
             })
     }
-    else{
+    else {
         // render app without data
         renderAndSend(req, res, store, today);
     }
@@ -161,10 +173,10 @@ const renderAndSend = (req, res, store, today) => {
 
     // render the react app to string
     // Add redux Provider and Router
-    let reactContent = 
+    let reactContent =
         ReactDOMServer.renderToString(
-            React.createElement(Provider, {store: store},
-                React.createElement(StaticRouter, {location: req.url, context: {}},
+            React.createElement(Provider, { store: store },
+                React.createElement(StaticRouter, { location: req.url, context: {} },
                     React.createElement(App, {}, null)
                 )
             )
@@ -195,8 +207,8 @@ const renderAndSend = (req, res, store, today) => {
     });
 
     // fill cache
-    if(caching){
-        cache[req.path] = {
+    if (caching) {
+        cache[req.originalUrl] = {
             time: today.getTime(),
             response: final
         };
